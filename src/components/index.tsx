@@ -1,8 +1,25 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import minhaLogo from '../assets/Minha logo.png'
 function Header(){
   const anchorText: string[] = ['Inicio', 'Projetos', 'Serviços']
-  const [LiActivate, setLiActivate] = useState(true)
+  const [LiActivate, setLiActivate] = useState(false)
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
+
+  useEffect(() => {
+    // Função que atualiza o estado com o novo tamanho da janela
+    const handleResize = () => {
+      setWindowSize(window.innerWidth);
+    };
+
+    // Adicionar o ouvinte de evento de redimensionamento
+    window.addEventListener("resize", handleResize);
+
+    // Limpar o ouvinte de evento ao desmontar o componente
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  
   return(
     <header className={`${LiActivate ? 'h-80 sm:h-32' : 'h-32'} bg-gray-50 w-full transition-all`}>
       <div className='flex items-center lg:justify-around sm:justify-evenly justify-between sm:px-0'>
@@ -17,11 +34,11 @@ function Header(){
             </svg>
           </button>
           {/* Lógica de ação ao clicar no botão aparecer texto */}
-          <div className={`w-1/3 flex-row ${LiActivate ? 'sm:w-full absolute mt-4 sm:mt-0 delay-75 sm:relative' : 'opacity-0'}`}>
-            <nav className={`sm:h-full transition-all ease-in-out duration-1000 ${LiActivate ? 'translate-y-1 sm:translate-y-0 flex flex-col sm:flex-row  justify-between h-52 sm:h-auto' : 'translate-y-0 pointer-events-none'} lg:w-full justify-around list-none text-2xl text-neutral-700 font-["Inter"]`}>
+          <div className={`w-1/3 flex-row ${LiActivate || (windowSize >= 640) ? 'sm:w-full absolute mt-4 sm:mt-0 delay-75 sm:relative' : 'opacity-0'}`}>
+            <nav className={`sm:h-full transition-all ease-in-out duration-1000 ${LiActivate || (windowSize >= 640)  ? 'translate-y-1 sm:translate-y-0 flex flex-col sm:flex-row  justify-between h-52 sm:h-auto' : 'translate-y-0 pointer-events-none'} lg:w-full justify-around list-none text-2xl text-neutral-700 font-["Inter"]`}>
               {
-              LiActivate ? anchorText.map((text)=>(
-                <li className={`text-center cursor-pointer h-8 hover:border-b-2 ${ LiActivate ? 'border-neutral-500 hover:text-neutral-500' : ''}`} key={text}>
+              LiActivate || (windowSize >= 640)  ? anchorText.map((text)=>(
+                <li className={`text-center cursor-pointer h-8 hover:border-b-2 ${ LiActivate || (windowSize >= 640) ? 'border-neutral-500 hover:text-neutral-500' : ''}`} key={text}>
                   <a href="">{text}</a>
                 </li>
               )) : ''}
