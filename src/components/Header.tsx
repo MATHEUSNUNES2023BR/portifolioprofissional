@@ -21,7 +21,7 @@ function Header(){
   }, []);
   
   return(
-    <header className={`${LiActivate ? 'h-80 sm:h-32' : 'h-32'} bg-gray-50 w-full transition-all`}>
+    <header className={`${LiActivate ? 'h-80 sm:h-32' : 'h-32'}  bg-neutral-200 w-full transition-all`}>
       <div className='flex items-center lg:justify-around sm:justify-evenly justify-between sm:px-0'>
         <h1 className='ml-7 w-32 sm:w-36 lg:w-32 '><img className='w-fit rounded-full' src={minhalogo} alt="" /></h1>
         <div className='mx-3 sm:mx-0 place-items-center flex-col sm:flex-row w-1/3 sm:w-1/2 h-full items-center'>

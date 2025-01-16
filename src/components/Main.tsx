@@ -8,6 +8,7 @@ import redux from '../assets/habilidades/icons8-redux-an-open-source-javascript-
 import python from '../assets/habilidades/icons8-python-96.png'
 import django from '../assets/habilidades/icons8-django-a-high-level-python-web-framework-that-encourages-rapid-development-96.png'
 import postgres from '../assets/habilidades/icons8-postgres-96.png'
+import ApiClima from './ApiClima'
 type Habilidades = {
   image: string;
   alt: string;
@@ -58,7 +59,7 @@ function Main(){
        </div>
        <div className="w-[98vw] xl:w-[760px] xl:h-[800px] lg:w-[500px] lg:h-[500px] sm:w-[65vw] sm:h-[550px]">
         <section className='mt-8 sm:mt-10'>
-          <h2 className='sm:text-3xl text-2xl'>Habildiades:</h2>
+          <h2 className='sm:text-3xl text-2xl text-neutral-800'>Habildiades:</h2>
           <hr />
           <ul className='grid grid-cols-3 gap-10 mt-10 place-items-center sm:place-items-start'>
             {habilidadesImg.map((habilidade)=>{
@@ -69,7 +70,7 @@ function Main(){
           </ul>
         </section>
         <section className='mt-16'>
-          <h2 className='sm:text-3xl text-2xl'>Soft Skills:</h2>
+          <h2 className='sm:text-3xl text-2xl text-neutral-800'>Soft Skills:</h2>
           <hr />
           <div className='mt-5 grid xl:grid-cols-3 lg:grid-cols-2 gap-2 grid-rows-2 grid-cols-2 sm:gap-4 sm:w-[94%]'>   
             {softSkills.map((skill)=>{
@@ -77,15 +78,17 @@ function Main(){
                 <div  
                   key={skill.softSkill}
                   className={`border-2 border-gray-300 rounded-md w-[48vw] sm:w-[235px] px-2 sm:px-5`}>
-                  <h3 className='text-sm sm:text-md xl:text-[16px] font-bold text-center'>{skill.softSkill}</h3>
-                  <p className='text-justify sm:text-justify text-xs sm:text-sm'>{skill.description}</p>
+                  <h3 className=' text-neutral-800 text-sm sm:text-md xl:text-[16px] font-bold text-center'>{skill.softSkill}</h3>
+                  <p className=' text-neutral-800 text-justify sm:text-justify text-xs sm:text-sm'>{skill.description}</p>
                 </div>
               )
             })}
           </div>
         </section>
        </div>
-       <div>3</div>
+       <div className='flex justify-center h-fit'>
+        <ApiClima />
+       </div>
     </main>
   )
 }
