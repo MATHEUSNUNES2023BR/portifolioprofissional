@@ -54,10 +54,13 @@ function Main(){
   
   return(
     <main className="grid sm:grid-cols-[repeat(2,minmax(200px,auto))] grid-cols-[repeat(1,minmax(200px,auto))] sm:grid-rows-2 sm:h-[800px] justify-around mt-4">
-       <div className="w-[250px] lg:w-[350px] lg:h-[350px] h-[250px]  md:w-[250px] md:h-[250px] mt-4 sm:w-[190px] sm:h-[190px] sm:mx-4 mx-auto">
+       <div className="order-1 w-[250px] lg:w-[320px] lg:h-[320px] h-[250px]  md:w-[250px] md:h-[250px] mt-4 sm:w-[190px] sm:h-[190px] sm:mx-4 mx-auto self-center">
         <img className='w-fit h-full rounded-full mx-auto shadow-2xl shadow-neutral-500' src={minhafoto} alt="" />
        </div>
-       <div className="w-[98vw] xl:w-[760px] xl:h-[800px] lg:w-[500px] lg:h-[500px] sm:w-[65vw] sm:h-[550px]">
+       <div className='col-start-1 flex justify-center h-fit order-2'>
+          <ApiClima />
+        </div>
+       <div className="sm:row-start-1 sm:col-start-2 order-3 w-[98vw] xl:w-[760px] xl:h-[800px] lg:w-[500px] lg:h-[500px] sm:w-[65vw] sm:h-[550px]">
         <section className='mt-8 sm:mt-10'>
           <h2 className='sm:text-3xl text-2xl text-neutral-800'>Habildiades:</h2>
           <hr />
@@ -85,9 +88,6 @@ function Main(){
             })}
           </div>
         </section>
-       </div>
-       <div className='flex justify-center h-fit'>
-        <ApiClima />
        </div>
     </main>
   )

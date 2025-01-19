@@ -74,12 +74,12 @@ function ApiClima(){
     return 
   }
   return(
-    <div className='shadow-md bg-gradient-to-t from-neutral-200 to-sky-400  rounded-md  font-["Poppins"] text-neutral-800 w-[310px] h-auto'>
+    <div className=' p-2 sm:p-1 sm:py-3 mt-5 w-[80%] shadow-md bg-gradient-to-t to-sky-100 from-gray-200 rounded-md  font-["Poppins"] text-neutral-800 lg:w-[310px] h-auto'>
       <div className='flex-col place-items-center w-full'>
-        <h3 className='text-xl text-center pt-2'>Confira o clima de uma cidade: </h3>
+        <h3 className='text-md sm:text-xl text-center pt-2'>Confira o clima de uma cidade: </h3>
         <div id="form-input-container" className='flex items-center justify-around w-full mt-5'>
-          <input onChange={(e) => setCityState(e.target.value)} className='w-[80%] h-10 border-2 rounded-md border-neutral-700 placeholder-neutral-500 placeholder:p-2' placeholder='Digite o nome da cidade' type="text" name="" id="" />
-          <button onClick={() => {showWheaterData(cityState), setActivator(true), setIsLoading(false)}} id="search" className='w-8'>
+          <input onChange={(e) => setCityState(e.target.value)} className='w-[80%] h-9 sm:h-10 border-2 rounded-md border-neutral-700 placeholder-neutral-500 placeholder:p-2' placeholder='Digite o nome da cidade' type="text" name="" id="" />
+          <button onClick={() => {showWheaterData(cityState), setActivator(true), setIsLoading(false)}} id="search" className='w-7 sm:w-8'>
             <img className='w-full' src={lupa} alt="" />
           </button>
         </div>
@@ -89,7 +89,7 @@ function ApiClima(){
             <div className={`w-full`}>
               <hr className='text-black w-full mt-2'/>
               <div className='mt-4 flex-col place-items-center'>
-              <div className='flex items-center justify-evenly w-72 mx-auto mt-7'>
+              <div className='flex items-center justify-evenly w-[100%] mx-auto mt-7'>
                 <img className='w-6' src={localizacao} alt="Icone Localização" />
                 <span className='text-xl text-center' id='city'>{cityName}</span>
                 <img className='mt-1' id='country' alt="Bandeira do país" src={countryURL} />
