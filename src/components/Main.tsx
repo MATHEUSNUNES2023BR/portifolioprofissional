@@ -8,6 +8,8 @@ import redux from '../assets/habilidades/icons8-redux-an-open-source-javascript-
 import python from '../assets/habilidades/icons8-python-96.png'
 import django from '../assets/habilidades/icons8-django-a-high-level-python-web-framework-that-encourages-rapid-development-96.png'
 import postgres from '../assets/habilidades/icons8-postgres-96.png'
+import bootstrap from '../assets/habilidades/icons8-bootstrap-96.png'
+import wix from '../assets/habilidades/icons8-wix.com-ltd.-is-an-israeli-cloud-based-web-development-96.png'
 import ApiClima from './ApiClima'
 type Habilidades = {
   image: string;
@@ -15,15 +17,17 @@ type Habilidades = {
 }
 function Main(){
   const habilidadesImg: Habilidades[] = [
-    {image: html, alt: 'html'},
-    {image: css, alt: 'css'}, 
-    {image: js, alt: 'js'},
-    {image: ts, alt: 'ts'},
-    {image: react, alt: 'react'},
-    {image:redux, alt:'redux'},
-    {image:python, alt:'python'},
-    {image:django, alt:'django'},
-    {image:postgres, alt:'postgres'},
+    {image: html, alt: 'HTML'},
+    {image: css, alt: 'CSS'}, 
+    {image: js, alt: 'JavaScript'},
+    {image: ts, alt: 'TypeScript'},
+    {image: react, alt: 'React'},
+    {image: redux, alt: 'Redux'},
+    {image: bootstrap, alt: 'Bootstrap'},
+    {image: python, alt: 'Python'},
+    {image: django, alt: 'Django'},
+    {image: postgres, alt: 'PostgreSQL'},
+    {image: wix, alt: 'Wix'},
   ]
   const softSkills = [
     {
@@ -53,42 +57,181 @@ function Main(){
   ]
   
   return(
-    <main className="grid sm:grid-cols-[repeat(2,minmax(200px,auto))] grid-cols-[repeat(1,minmax(200px,auto))] sm:grid-rows-2 sm:h-[800px] justify-around mt-4">
-       <div className="order-1 w-[250px] lg:w-[320px] lg:h-[320px] h-[250px]  md:w-[250px] md:h-[250px] mt-4 sm:w-[190px] sm:h-[190px] sm:mx-4 mx-auto self-center">
-        <img className='w-fit h-full rounded-full mx-auto shadow-2xl shadow-neutral-500' src={minhafoto} alt="" />
-       </div>
-       <div className='col-start-1 flex justify-center h-fit order-2'>
-          <ApiClima />
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <section className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-start mb-20">
+          <div className="flex flex-col items-center gap-8">
+            <div className="relative">
+              <img 
+                className="w-64 h-64 lg:w-80 lg:h-80 rounded-full object-cover border-4 border-white shadow-2xl" 
+                src={minhafoto} 
+                alt="Foto de perfil" 
+              />
+            </div>
+            <div className="w-full max-w-sm">
+              <ApiClima />
+            </div>
+          </div>
+          
+          <div className="bg-white rounded-2xl shadow-xl p-8">
+            <h2 className="text-3xl font-bold text-gray-800 mb-6">
+              Habilidades Técnicas
+              <div className="h-1 w-20 bg-blue-500 mt-2"></div>
+            </h2>
+            <div className="space-y-8">
+              <div className="bg-gradient-to-r from-blue-50 to-transparent p-6 rounded-xl">
+                <h3 className="text-xl font-semibold text-blue-600 mb-4">Front-End</h3>
+                <ul className="grid grid-cols-3 sm:grid-cols-4 gap-6 place-items-center">
+                  {[html, css, js, ts, react, redux, bootstrap].map((tech, index) => (
+                    <li key={index} className="w-14 h-14 transition-all hover:scale-110 hover:-translate-y-1">
+                      <img 
+                        src={tech} 
+                        alt={habilidadesImg[index].alt}
+                        className="w-full h-full object-contain" 
+                        title={habilidadesImg[index].alt}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-l from-purple-50 to-transparent p-6 rounded-xl">
+                <h3 className="text-xl font-semibold text-purple-600 mb-4">Back-End & Database</h3>
+                <ul className="grid grid-cols-3 gap-6 place-items-center">
+                  {[python, django, postgres].map((tech, index) => (
+                    <li key={index} className="w-14 h-14 transition-all hover:scale-110 hover:-translate-y-1">
+                      <img 
+                        src={tech} 
+                        alt={habilidadesImg[index + 7].alt}
+                        className="w-full h-full object-contain"
+                        title={habilidadesImg[index + 7].alt}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-r from-green-50 to-transparent p-6 rounded-xl">
+                <h3 className="text-xl font-semibold text-green-600 mb-4">Outras Ferramentas</h3>
+                <ul className="grid grid-cols-3 gap-6 place-items-center">
+                  <li className="w-14 h-14 transition-all hover:scale-110 hover:-translate-y-1">
+                    <img 
+                      src={wix} 
+                      alt="Wix"
+                      className="w-full h-full object-contain"
+                      title="Wix"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-       <div className="sm:row-start-1 sm:col-start-2 order-3 w-[98vw] xl:w-[760px] xl:h-[800px] lg:w-[500px] lg:h-[500px] sm:w-[65vw] sm:h-[550px]">
-        <section className='mt-8 sm:mt-10'>
-          <h2 className='sm:text-3xl text-2xl text-neutral-800'>Habildiades:</h2>
-          <hr />
-          <ul className='grid grid-cols-3 gap-10 mt-10 place-items-center sm:place-items-start'>
-            {habilidadesImg.map((habilidade)=>{
-              return(
-                <li className='w-14 h-14'><img src={habilidade.image} alt={habilidade.alt} /></li>
-              )
-            })}
-          </ul>
+
+        <section className="bg-white rounded-2xl shadow-xl p-8 mb-12">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            Sobre Mim
+            <div className="h-1 w-20 bg-blue-500 mt-2"></div>
+          </h2>
+          <p className="text-lg leading-relaxed text-gray-700">
+            Nascido em Florianópolis, Santa Catarina, cresci em Aparecida de Goiânia, Goiás.
+            Tenho 24 anos e atualmente, e procuro me especializar como Desenvolvedor Fullstack Python.
+            Como cristão, minha fé no Senhor Yeshua Hamashiach guia minha trajetória, refletindo meus valores em cada projeto e desafio que assumo. 
+            Meu objetivo é crescer como profissional de tecnologia, criando soluções inovadoras.
+          </p>
         </section>
-        <section className='mt-16'>
-          <h2 className='sm:text-3xl text-2xl text-neutral-800'>Soft Skills:</h2>
-          <hr />
-          <div className='mt-5 grid xl:grid-cols-3 lg:grid-cols-2 gap-2 grid-rows-2 grid-cols-2 sm:gap-4 sm:w-[94%]'>   
-            {softSkills.map((skill)=>{
-              return(
-                <div  
-                  key={skill.softSkill}
-                  className={`border-2 border-gray-300 rounded-md w-[48vw] sm:w-[235px] px-2 sm:px-5`}>
-                  <h3 className=' text-neutral-800 text-sm sm:text-md xl:text-[16px] font-bold text-center'>{skill.softSkill}</h3>
-                  <p className=' text-neutral-800 text-justify sm:text-justify text-xs sm:text-sm'>{skill.description}</p>
-                </div>
-              )
-            })}
+
+        <section className="bg-white rounded-2xl shadow-xl p-8 mb-12">
+          <h2 className="text-3xl font-bold text-gray-800 mb-6">
+            Soft Skills
+            <div className="h-1 w-20 bg-blue-500 mt-2"></div>
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {softSkills.map((skill) => (
+              <div
+                key={skill.softSkill}
+                className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow"
+              >
+                <h3 className="text-xl font-semibold text-blue-600 mb-3">
+                  {skill.softSkill}
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  {skill.description}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
-       </div>
+
+        <section className="bg-white rounded-2xl shadow-xl p-8">
+          <h2 className="text-3xl font-bold text-gray-800 mb-6">
+            Habilidades Técnicas Detalhadas
+            <div className="h-1 w-20 bg-blue-500 mt-2"></div>
+          </h2>
+          
+          <div className="space-y-8">
+            <div className="bg-gradient-to-r from-blue-50 via-blue-50 to-transparent p-6 rounded-xl">
+              <h3 className="text-2xl font-semibold text-blue-600 mb-4 flex items-center gap-3">
+                🚀 Front-End
+              </h3>
+              <ul className="space-y-4 text-gray-700">
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-500 text-xl">•</span>
+                  <span>HTML e CSS: Criação de estruturas web com estilização avançada.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-500 text-xl">•</span>
+                  <span>React: Desenvolvimento de interfaces dinâmicas e responsivas utilizando componentes reutilizáveis.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-500 text-xl">•</span>
+                  <span>JavaScript: Programação orientada a eventos e manipulação do DOM.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-500 text-xl">•</span>
+                  <span>Bootstrap, Tailwind e Styled Components: Uso de framework para desenvolvimento de layouts responsivos e estilizados.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-gradient-to-l from-purple-50 via-purple-50 to-transparent p-6 rounded-xl ml-auto w-[90%]">
+              <h3 className="text-2xl font-semibold text-purple-600 mb-4 flex items-center gap-3">
+                💻 Back-End
+              </h3>
+              <ul className="space-y-4 text-gray-700">
+                <li className="flex items-start gap-3">
+                  <span className="text-purple-500 text-xl">•</span>
+                  <span>Conhecimentos em Python e o framework Django</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-purple-500 text-xl">•</span>
+                  <span>Familiaridade com bancos de dados Postgres</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-gradient-to-r from-green-50 via-green-50 to-transparent p-6 rounded-xl">
+              <h3 className="text-2xl font-semibold text-green-600 mb-4 flex items-center gap-3">
+                🛠 Ferramentas e Metodologias
+              </h3>
+              <ul className="space-y-4 text-gray-700">
+                <li className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">•</span>
+                  <span>Controle de versão com Git</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">•</span>
+                  <span>Criação de interfaces responsivas e dinâmicas</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">•</span>
+                  <span>Manutenção de infraestrutura tecnológica</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </section>
     </main>
   )
 }

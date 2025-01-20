@@ -1,52 +1,91 @@
-import { useEffect, useState } from 'react'
-import minhalogo from '../assets/Minha logo.png'
-function Header(){
-  const anchorText: string[] = ['Inicio', 'Projetos', 'Serviços']
-  const [LiActivate, setLiActivate] = useState(false)
-  const [windowSize, setWindowSize] = useState(window.innerWidth);
+import { useState } from 'react'
 
-  useEffect(() => {
-    // Função que atualiza o estado com o novo tamanho da janela
-    const handleResize = () => {
-      setWindowSize(window.innerWidth);
-    };
+function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-    // Adicionar o ouvinte de evento de redimensionamento
-    window.addEventListener("resize", handleResize);
+  return (
+    <header className="bg-white/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-100 shadow-sm">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo/Nome */}
+          <a 
+            href="#" 
+            className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+          >
+            Matheus Dev
+          </a>
 
-    // Limpar o ouvinte de evento ao desmontar o componente
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-  
-  return(
-    <header className={`${LiActivate ? 'h-80 sm:h-32' : 'h-32'}  bg-neutral-200 w-full transition-all`}>
-      <div className='flex items-center lg:justify-around sm:justify-evenly justify-between sm:px-0'>
-        <h1 className='ml-7 w-32 sm:w-36 lg:w-32 '><img className='w-fit rounded-full' src={minhalogo} alt="" /></h1>
-        <div className='mx-3 sm:mx-0 place-items-center flex-col sm:flex-row w-1/3 sm:w-1/2 h-full items-center'>
-          <button onClick={() => setLiActivate(!LiActivate)} 
-            data-collapse-toggle="navbar-default" 
-            type="button" 
-            className="flex sm:hidden items-center p-2 w-14 h-14 justify-center text-sm text-neutral-700 rounded-lg md:hidden hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:ring-neutral-600" aria-controls="navbar-default" aria-expanded="false">
-            <svg className="w-7 h-7" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          {/* Links de Navegação Desktop */}
+          <div className="hidden sm:flex items-center space-x-8">
+            <NavLink href="#sobre">Sobre</NavLink>
+            <NavLink href="#habilidades">Habilidades</NavLink>
+            <NavLink href="#projetos">Projetos</NavLink>
+            <NavLink href="#contato">Contato</NavLink>
+          </div>
+
+          {/* Botão Mobile */}
+          <button 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="sm:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            aria-label="Menu de navegação"
+          >
+            <svg 
+              className="w-6 h-6 text-gray-600" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M4 6h16M4 12h16M4 18h16" 
+              />
             </svg>
           </button>
-          {/* Lógica de ação ao clicar no botão aparecer texto */}
-          <div className={`w-1/3 flex-row ${LiActivate || (windowSize >= 640) ? 'sm:w-full absolute mt-4 sm:mt-0 delay-75 sm:relative' : 'opacity-0'}`}>
-            <nav className={`sm:h-full transition-all ease-in-out duration-1000 ${LiActivate || (windowSize >= 640)  ? 'translate-y-1 sm:translate-y-0 flex flex-col sm:flex-row  justify-between h-52 sm:h-auto' : 'translate-y-0 pointer-events-none'} lg:w-full justify-around list-none text-2xl text-neutral-700 font-["Inter"]`}>
-              {
-              LiActivate || (windowSize >= 640)  ? anchorText.map((text)=>(
-                <li className={`text-center cursor-pointer h-8 hover:border-b-2 ${ LiActivate || (windowSize >= 640) ? 'border-neutral-500 hover:text-neutral-500' : ''}`} key={text}>
-                  <a href="">{text}</a>
-                </li>
-              )) : ''}
-            </nav>
+
+          {/* Menu Mobile */}
+          <div className={`
+            absolute top-full left-0 w-full 
+            bg-white/95 backdrop-blur-sm border-b border-gray-100 
+            shadow-lg p-4 space-y-3 sm:hidden
+            transition-all duration-200
+            ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}
+          `}>
+            <MobileNavLink href="#sobre">Sobre</MobileNavLink>
+            <MobileNavLink href="#habilidades">Habilidades</MobileNavLink>
+            <MobileNavLink href="#projetos">Projetos</MobileNavLink>
+            <MobileNavLink href="#contato">Contato</MobileNavLink>
           </div>
         </div>
-      </div>
+      </nav>
     </header>
   )
 }
+
+// Componente para links de navegação desktop
+function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a 
+      href={href}
+      className="text-gray-600 hover:text-blue-600 font-medium transition-colors relative group"
+    >
+      {children}
+      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+    </a>
+  )
+}
+
+// Componente para links de navegação mobile
+function MobileNavLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a 
+      href={href}
+      className="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors"
+    >
+      {children}
+    </a>
+  )
+}
+
 export default Header

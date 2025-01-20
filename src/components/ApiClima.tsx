@@ -74,46 +74,75 @@ function ApiClima(){
     return 
   }
   return(
-    <div className=' p-2 sm:p-1 sm:py-3 mt-5 w-[80%] shadow-md bg-gradient-to-t to-sky-100 from-gray-200 rounded-md  font-["Poppins"] text-neutral-800 lg:w-[310px] h-auto'>
-      <div className='flex-col place-items-center w-full'>
-        <h3 className='text-md sm:text-xl text-center pt-2'>Confira o clima de uma cidade: </h3>
-        <div id="form-input-container" className='flex items-center justify-around w-full mt-5'>
-          <input onChange={(e) => setCityState(e.target.value)} className='w-[80%] h-9 sm:h-10 border-2 rounded-md border-neutral-700 placeholder-neutral-500 placeholder:p-2' placeholder='Digite o nome da cidade' type="text" name="" id="" />
-          <button onClick={() => {showWheaterData(cityState), setActivator(true), setIsLoading(false)}} id="search" className='w-7 sm:w-8'>
-            <img className='w-full' src={lupa} alt="" />
+    <div className='w-full max-w-md bg-white/80 backdrop-blur-sm rounded-xl shadow-lg p-6 font-["Poppins"] text-gray-800'>
+      <div className='space-y-4'>
+        <h3 className='text-xl font-semibold text-center bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text'>
+          Confira o clima de uma cidade
+        </h3>
+        
+        <div className='flex items-center gap-2 bg-white rounded-lg shadow-sm p-2'>
+          <input 
+            onChange={(e) => setCityState(e.target.value)} 
+            className='flex-1 px-3 py-2 outline-none text-gray-700 placeholder-gray-400 text-sm'
+            placeholder='Digite o nome da cidade'
+            type="text"
+          />
+          <button 
+            onClick={() => {showWheaterData(cityState), setActivator(true), setIsLoading(false)}}
+            className='p-2 hover:bg-gray-100 rounded-lg transition-colors'
+          >
+            <img className='w-5 h-5 opacity-60' src={lupa} alt="Buscar" />
           </button>
         </div>
-        {
-        activator ? 
-          (islLoading ? 
-            <div className={`w-full`}>
-              <hr className='text-black w-full mt-2'/>
-              <div className='mt-4 flex-col place-items-center'>
-              <div className='flex items-center justify-evenly w-[100%] mx-auto mt-7'>
-                <img className='w-6' src={localizacao} alt="Icone Localização" />
-                <span className='text-xl text-center' id='city'>{cityName}</span>
-                <img className='mt-1' id='country' alt="Bandeira do país" src={countryURL} />
+
+        {activator ? (
+          islLoading ? (
+            <div className='space-y-6 animate-fade-in'>
+              <hr className='border-gray-200'/>
+              
+              <div className='flex items-center justify-center gap-3'>
+                <img className='w-5 opacity-60' src={localizacao} alt="Localização" />
+                <span className='text-xl font-medium'>{cityName}</span>
+                <img className='h-5' src={countryURL} alt={`Bandeira de ${cityName}`} />
               </div>
-              <p className='text-xl mt-5'><span>{temperature}</span> &deg;C</p>
-              <div className='flex items-center mt-2'>
-                <p className='capitalize'>{weather}</p>
-                <img id='weather-icon' src={`https://openweathermap.org/img/wn/${weatherIcon}.png`} alt="Condições do clima" />
+
+              <div className='text-center'>
+                <div className='text-4xl font-bold text-blue-600'>
+                  {temperature}°C
+                </div>
+                <div className='flex items-center justify-center mt-1'>
+                  <span className='text-sm text-gray-600 capitalize'>{weather}</span>
+                  <img 
+                    className='w-8'
+                    src={`https://openweathermap.org/img/wn/${weatherIcon}.png`} 
+                    alt={weather} 
+                  />
+                </div>
               </div>
-              <div className='flex justify-around w-48 mt-3'>
-                <p className='flex items-center' id="humidity">
-                  <img className='w-6' src={umidade} alt="Umidade" />
-                  <span className='ms-3'>{humidity}%</span>
-                </p>
-                <p className='flex items-center' id="wind">
-                  <img className='w-6' src={vento} alt="Vento" />
-                  <span className='ms-3'>{wind}km/h</span>
-                </p>
+
+              <div className='flex justify-center gap-8'>
+                <div className='flex items-center gap-2'>
+                  <img className='w-5 opacity-60' src={umidade} alt="Umidade" />
+                  <div>
+                    <p className='text-sm text-gray-500'>Umidade</p>
+                    <p className='font-medium'>{humidity}%</p>
+                  </div>
+                </div>
+                <div className='flex items-center gap-2'>
+                  <img className='w-5 opacity-60' src={vento} alt="Vento" />
+                  <div>
+                    <p className='text-sm text-gray-500'>Vento</p>
+                    <p className='font-medium'>{wind} km/h</p>
+                  </div>
+                </div>
               </div>
             </div>
+          ) : (
+            <div className='flex justify-center p-4'>
+              <img className='w-16 opacity-70' src={loading} alt="Carregando..." />
             </div>
-            : <img className='w-24' src={loading}/>)
-          : (<div> </div>)
-        }
+          )
+        ) : null}
       </div>
     </div>
   )
