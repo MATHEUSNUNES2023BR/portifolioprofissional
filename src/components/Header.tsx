@@ -1,7 +1,10 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import LanguageSelector from './LanguageSelector'
+import { Language, LanguageContext } from '../App'
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { language, setLanguage, t } = useContext(LanguageContext)
 
   return (
     <header className="bg-white/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-100 shadow-sm">
@@ -17,10 +20,13 @@ function Header() {
 
           {/* Links de Navegação Desktop */}
           <div className="hidden sm:flex items-center space-x-12">
-            <NavLink href="#sobre">Sobre</NavLink>
-            <NavLink href="#habilidades">Habilidades</NavLink>
-            <NavLink href="#projetos">Projetos</NavLink>
-            <NavLink href="#contato">Contato</NavLink>
+            <NavLink href="#sobre">{t.header.about}</NavLink>
+            <NavLink href="#projetos">{t.header.projects}</NavLink>
+            <NavLink href="#contato">{t.header.contact}</NavLink>
+            <LanguageSelector 
+              currentLanguage={language}
+              onLanguageChange={(lang: Language) => setLanguage(lang)}
+            />
           </div>
 
           {/* Botão Mobile */}
