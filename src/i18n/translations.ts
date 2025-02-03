@@ -100,6 +100,14 @@ export const translations = {
             "Integração com ferramentas de marketing e SEO",
             "Otimização de performance e experiência do usuário"
           ]
+        },
+        technicalSupport: {
+          title: "🔧 Suporte Técnico",
+          items: [
+            "Manutenção de Hardware – Diagnóstico e reparo de computadores, notebooks, impressoras e periféricos.",
+            "Sistemas Operacionais – Instalação, configuração e manutenção de Windows, Linux.",
+            "Redes de Computadores – Configuração de roteadores, modens, cabeamento e redes Wi-Fi."
+          ]
         }
       },
       sections: {
@@ -334,6 +342,14 @@ export const translations = {
             "Integration with marketing and SEO tools",
             "Performance and user experience optimization"
           ]
+        },
+        technicalSupport: {
+          title: "🔧 Technical Support",
+          items: [
+            "Hardware Maintenance – Diagnosis and repair of computers, laptops, printers, and peripherals.",
+            "Operating Systems – Installation, configuration, and maintenance of Windows, Linux.",
+            "Computer Networks – Configuration of routers, modems, cabling, and Wi-Fi networks."
+          ]
         }
       },
       sections: {
@@ -477,6 +493,7 @@ export const translations = {
       }
     }
   },
+
   es: {
     header: {
       about: "Inicio",
@@ -501,7 +518,7 @@ export const translations = {
         },
         communication: {
           title: "Comunicación",
-          description: "Prestación de soporte e interacción con colaboradores para resolver cuestiones técnicas."
+          description: "Prestación de soporte e interacción com colaboradores para resolver questões técnicas."
         },
         adaptability: {
           title: "Adaptabilidad",
@@ -567,6 +584,14 @@ export const translations = {
             "Personalización avanzada de plantillas y diseño responsivo",
             "Integración con herramientas de marketing y SEO",
             "Optimización de rendimiento y experiencia del usuario"
+          ]
+        },
+        technicalSupport: {
+          title: "🔧 Soporte Técnico",
+          items: [
+            "Mantenimiento de Hardware – Diagnóstico y reparación de computadoras, notebooks, impresoras y periféricos.",
+            "Sistemas Operativos – Instalación, configuración y mantenimiento de Windows, Linux.",
+            "Redes de Computadoras – Configuración de routers, módems, cableado y redes Wi-Fi."
           ]
         }
       },
@@ -709,4 +734,4 @@ export const translations = {
         submitButton: "Enviar Mensaje"}
     }
   }
-} 
+}
