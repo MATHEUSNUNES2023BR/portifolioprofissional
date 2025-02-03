@@ -22,7 +22,7 @@ function Header() {
           <div className="hidden sm:flex items-center space-x-12">
             <Link to="/">{t.header.about}</Link>
             <Link to="/projects">{t.header.projects}</Link>
-            <Link to="/contato">{t.header.contact}</Link>
+            <Link to="/contact">{t.header.contact}</Link>
             <LanguageSelector 
               currentLanguage={language}
               onLanguageChange={(lang: Language) => setLanguage(lang)}
@@ -59,27 +59,14 @@ function Header() {
             ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}
           `}>
             <div className="px-6 space-y-4">
-              <MobileNavLink href="#sobre">Sobre</MobileNavLink>
-              <MobileNavLink href="#projetos">Projetos</MobileNavLink>
-              <MobileNavLink href="#contato">Contato</MobileNavLink>
+              <MobileNavLink href="#sobre"><Link to="/">{t.header.about}</Link></MobileNavLink>
+              <MobileNavLink href="#projetos"><Link to="/projects">{t.header.projects}</Link></MobileNavLink>
+              <MobileNavLink href="#contato"><Link to="/contact">{t.header.contact}</Link></MobileNavLink>
             </div>
           </div>
         </div>
       </nav>
     </header>
-  )
-}
-
-// Componente para links de navegação desktop
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <a 
-      href={href}
-      className="text-gray-600 hover:text-blue-600 font-medium text-lg transition-colors relative group py-2"
-    >
-      {children}
-      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
-    </a>
   )
 }
 

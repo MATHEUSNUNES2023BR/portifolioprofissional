@@ -5,6 +5,7 @@ import { translations } from './i18n/translations'
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ProjectPage from './pages/ProjetctPage'
+import ContactPage from './pages/ContactPage'
 
 export type Language = 'pt' | 'en' | 'es'
 
@@ -29,6 +30,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/projects" element={<ProjectPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </BrowserRouter>
     </LanguageContext.Provider>

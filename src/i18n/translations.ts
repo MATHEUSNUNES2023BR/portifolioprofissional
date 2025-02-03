@@ -119,11 +119,11 @@ export const translations = {
     },
     projects:{
       card: {
-        h2:'Principais Funcionalidades:',
+        h2:'Principais Funcionalidades',
         projetos: 'Projetos',
         verprojeto: 'Ver Projeto',
         galeria: 'Galeria',
-        caracteristicasprincipais: 'Principais Funcionalidades: ',
+        detalhes: 'Detalhes:',
       },
       dbo:{
         title: "Dragon Ball Online - Knightz",
@@ -136,8 +136,9 @@ export const translations = {
         - Sistema de pagamento via PIX
         - Sistema de pagamento via CARTÃO DÉBITO E CRÉDITO
         - Skill Calculator para simulação de builds
-        - Página de Rankings e torneios Budokai`,
-        tech: ["React", "TypeScript", "Styled Components", "Django", "Python"],
+        - Página de Rankings e torneios Budokai
+        - Reponsividade`,
+        tech: ["React", "TypeScript", "Styled Components", "Django", "Python", "FullStack"],
         features: [
           "Gestão de contas",
           "Sistema de ranking",
@@ -178,7 +179,7 @@ export const translations = {
         - Formulário de Contato
         - Galeria de Imagens
         - Tipografia e Cores Bem Definidas`,
-        tech: ["Wix Studio", "CMS", "Responsive Design"],
+        tech: ["HTML", "CSS", "JS", "Bootstrap 5"],
         features: [
           "Design responsivo",
           "Navegação intuitiva",
@@ -187,8 +188,61 @@ export const translations = {
           "Otimização mobile",
         ],
       }
+    },
+    contact:{
+      title: "Entre em Contato",
+      subtitle: "Eu adoraria ouvir você! Estou sempre disponível para uma boa conversa.",
+      contactSection: {
+        title: "Fale Conosco",
+        description: "Escolha o canal de sua preferência para entrar em contato"
+      },
+      contactInfo: {
+        whatsapp: {
+          label: "WhatsApp",
+          value: "+55 (62) 981963308",
+          status: "Online"
+        },
+        email: {
+          label: "Email",
+          value: "servicematheusnunesdebarros@gmail.com",
+          status: "24/7"
+        },
+        location: {
+          label: "Localização",
+          value: "Goiás, GO - Brasil",
+          status: "Escritório"
+        },
+        socialMedia: {
+          title: "Redes Sociais"
+        }
+      },
+      form: {
+        title: "Envie uma Mensagem",
+        description: "Preencha o formulário abaixo e retornaremos em até 24 horas",
+        firstName: {
+          label: "Nome",
+          placeholder: "Seu nome"
+        },
+        lastName: {
+          label: "Sobrenome",
+          placeholder: "Seu sobrenome"
+        },
+        email: {
+          label: "Email",
+          placeholder: "seu@email.com"
+        },
+        subject: {
+          label: "Assunto",
+          placeholder: "Como podemos ajudar?"
+        },
+        message: {
+          label: "Mensagem",
+          placeholder: "Escreva sua mensagem aqui..."
+        },
+        submitButton: "Enviar Mensagem"
+      }
     }
-  },
+},
   en: {
     header: {
       about: "Home",
@@ -299,16 +353,16 @@ export const translations = {
     },
     projects:{
       card: {
-        h2:'Main Features:',
+        h2:'Main Features',
         projetos: 'Projects',
         galeria: 'Gallery',
         verprojeto: 'View Project',
-        caracteristicasprincipais: 'Main Features:',
+        detalhes: 'Details:',
       },
       dbo:{
         title: "Dragon Ball Online - Knightz",
         description: `This website was developed to provide MMORPG Dragon Ball Online players with a complete and interactive platform to manage their accounts, explore game information, and access exclusive resources.`,
-        longDescription: `Main Features:
+        longDescription: `
         - Homepage with interactive class video
         - Player and donor ranking tables
         - Complete Registration and Login system
@@ -367,6 +421,59 @@ export const translations = {
           "Modern interface",
           "Mobile optimization",
         ],
+      }
+    },
+    contact:{
+      title: "Contact Us",
+      subtitle: "I would love to hear from you! I'm always available for a good conversation.",
+      contactSection: {
+        title: "Get in Touch",
+        description: "Choose your preferred channel to contact us"
+      },
+      contactInfo: {
+        whatsapp: {
+          label: "WhatsApp",
+          value: "+55 (62) 981963308",
+        status: "Online"
+      },
+      email: {
+        label: "Email",
+        value: "servicematheusnunesdebarros@gmail.com",
+        status: "24/7"
+      },
+      location: {
+        label: "Location",
+        value: "Goiás, GO - Brazil",
+        status: "Office"
+      }
+    },
+      socialMedia: {
+        title: "Social Media"
+      },
+      form: {
+        title: "Send a Message",
+        description: "Fill out the form below and we'll get back to you within 24 hours",
+        firstName: {
+          label: "First Name",
+          placeholder: "Your first name"
+        },
+        lastName: {
+          label: "Last Name",
+          placeholder: "Your last name"
+        },
+        email: {
+          label: "Email",
+          placeholder: "your@email.com"
+        },
+        subject: {
+          label: "Subject",
+          placeholder: "How can we help?"
+        },
+        message: {
+          label: "Message",
+          placeholder: "Write your message here..."
+        },
+        submitButton: "Send Message"
       }
     }
   },
@@ -480,11 +587,11 @@ export const translations = {
     },
     projects:{
       card: {
-        h2:'Características Principales:',
+        h2:'Características principales:',
         projetos: 'Proyectos',
         galeria: 'Galería',
         verprojeto: 'Ver Proyecto',
-        caracteristicasprincipais: 'Características Principales:',
+        detalhes: 'Detalles',
       },
       dbo:{
         title: "Dragon Ball Online - Knightz",
@@ -548,6 +655,58 @@ export const translations = {
           "Optimización móvil",
         ],
       }
+    },
+    contact:{
+      title: "Contáctanos",
+      subtitle: "¡Me encantaría escucharte! Siempre estoy disponible para una buena conversación.",
+      contactSection: {
+        title: "Ponte en Contacto",
+        description: "Elige tu canal preferido para contactarnos"
+      },
+      contactInfo: {
+        whatsapp: {
+          label: "WhatsApp",
+          value: "+55 (62) 981963308",
+          status: "En línea"
+        },
+        email: {
+          label: "Email",
+          value: "servicematheusnunesdebarros@gmail.com",
+          status: "24/7"
+        },
+        location: {
+          label: "Ubicación",
+          value: "Goiás, GO - Brasil",
+          status: "Oficina"
+        }
+      },
+      socialMedia: {
+        title: "Redes Sociales"
+      },
+      form: {
+        title: "Envía un Mensaje",
+        description: "Completa el formulario a continuación y te responderemos en 24 horas",
+        firstName: {
+          label: "Nombre",
+          placeholder: "Tu nombre"
+        },
+        lastName: {
+          label: "Apellido",
+          placeholder: "Tu apellido"
+        },
+        email: {
+          label: "Email",
+          placeholder: "tu@email.com"
+        },
+        subject: {
+          label: "Asunto",
+          placeholder: "¿Cómo podemos ayudar?"
+        },
+        message: {
+          label: "Mensaje",
+          placeholder: "Escribe tu mensaje aquí..."
+        },
+        submitButton: "Enviar Mensaje"}
     }
   }
 } 
