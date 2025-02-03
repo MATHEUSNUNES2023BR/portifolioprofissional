@@ -123,11 +123,12 @@ export const translations = {
         projetos: 'Projetos',
         verprojeto: 'Ver Projeto',
         galeria: 'Galeria',
+        caracteristicasprincipais: 'Principais Funcionalidades: ',
       },
       dbo:{
         title: "Dragon Ball Online - Knightz",
         description: `Este site foi desenvolvido com o objetivo de oferecer aos jogadores do MMORPG Dragon Ball Online uma plataforma completa e interativa para gerenciar suas contas, explorar informações do jogo e acessar recursos exclusivos.`,
-        longDescription: `Funcionalidades Principais:
+        longDescription: `
         - Página Inicial com vídeo interativo das classes
         - Tabelas de Ranking de jogadores e doadores
         - Sistema completo de Cadastro e Login
@@ -149,9 +150,16 @@ export const translations = {
       sollie:{
         title: "Sollie Professional - Wix",
         description: "Site profissional desenvolvido com Wix Studio, oferecendo uma experiência sofisticada e responsiva para diferentes dispositivos.",
-        longDescription: `Desenvolvido com Wix Studio, este projeto combina design sofisticado e flexibilidade.
-        Utiliza CMS do Wix Studio para gerenciamento de produtos dinâmicos e oferece
-        uma experiência otimizada em mobile, tablet e desktop.`,
+        longDescription: `
+          - Design Moderno e Minimalista
+          - Navegação Intuitiva
+          - Responsividade
+          - Conteúdo Multimídia
+          - Call-to-Action (CTA) Estratégico
+          - Integração com Redes Sociais
+          - Formulários de Contato
+          - SEO Otimizado
+        `,
         tech: ["Wix Studio", "CMS", "Design Responsivo"],
         features: [
           "Produtos dinâmicos via CMS",
@@ -164,10 +172,13 @@ export const translations = {
       stakehouse:{
         title: "StakeHouse",
         description: "Página moderna e visualmente impactante para uma churrascaria, destacando ambiente, cardápio e proposta gastronômica.",
-        longDescription: `Projeto desenvolvido com foco em apresentação visual e experiência do usuário.
-        Utiliza Bootstrap 5 para garantir responsividade e consistência visual em diferentes dispositivos.
-        Design moderno que reflete o ambiente sofisticado do estabelecimento.`,
-        tech: ["HTML", "CSS", "JavaScript", "Bootstrap 5"],
+        longDescription: `
+        - Design Responsivo e Moderno
+        - Navegação Intuitiva
+        - Formulário de Contato
+        - Galeria de Imagens
+        - Tipografia e Cores Bem Definidas`,
+        tech: ["Wix Studio", "CMS", "Responsive Design"],
         features: [
           "Design responsivo",
           "Navegação intuitiva",
@@ -292,6 +303,7 @@ export const translations = {
         projetos: 'Projects',
         galeria: 'Gallery',
         verprojeto: 'View Project',
+        caracteristicasprincipais: 'Main Features:',
       },
       dbo:{
         title: "Dragon Ball Online - Knightz",
@@ -318,9 +330,16 @@ export const translations = {
       sollie:{
         title: "Sollie Professional - Wix",
         description: "Professional website developed with Wix Studio, offering a sophisticated and responsive experience across different devices.",
-        longDescription: `Developed with Wix Studio, this project combines sophisticated design and flexibility.
-        It uses Wix Studio CMS for dynamic product management and provides
-        an optimized experience on mobile, tablet, and desktop.`,
+        longDescription: `
+          - Modern and Minimalist Design
+          - Intuitive Navigation
+          - Responsiveness
+          - Multimedia Content
+          - Strategic Call-to-Action (CTA)
+          - Social Media Integration
+          - Contact Forms
+          - Optimized SEO
+        `,
         tech: ["Wix Studio", "CMS", "Responsive Design"],
         features: [
           "Dynamic products via CMS",
@@ -333,9 +352,13 @@ export const translations = {
       stakehouse:{
         title: "StakeHouse",
         description: "A modern and visually striking page for a steakhouse, highlighting ambiance, menu, and gastronomic concept.",
-        longDescription: `Project developed with a focus on visual presentation and user experience.
-        Uses Bootstrap 5 to ensure responsiveness and visual consistency across different devices.
-        Modern design that reflects the sophisticated atmosphere of the establishment.`,
+        longDescription: `
+        - Responsive and Modern Design
+        - Intuitive Navigation
+        - Contact Form
+        - Image Gallery
+        - Well-Defined Typography and Colors
+        `,
         tech: ["HTML", "CSS", "JavaScript", "Bootstrap 5"],
         features: [
           "Responsive design",
@@ -461,6 +484,7 @@ export const translations = {
         projetos: 'Proyectos',
         galeria: 'Galería',
         verprojeto: 'Ver Proyecto',
+        caracteristicasprincipais: 'Características Principales:',
       },
       dbo:{
         title: "Dragon Ball Online - Knightz",
@@ -487,9 +511,15 @@ export const translations = {
       sollie:{
         title: "Sollie Professional - Wix",
         description: "Sitio web profesional desarrollado con Wix Studio, ofreciendo una experiencia sofisticada y responsiva en diferentes dispositivos.",
-        longDescription: `Desarrollado con Wix Studio, este proyecto combina un diseño sofisticado y flexibilidad.
-        Utiliza el CMS de Wix Studio para la gestión de productos dinámicos y ofrece
-        una experiencia optimizada en móvil, tableta y escritorio.`,
+        longDescription: `
+        - Diseño Moderno y Minimalista
+        - Navegación Intuitiva
+        - Responsividad
+        - Contenido Multimedia
+        - Llamado a la Acción (CTA) Estratégico
+        - Integración con Redes Sociales
+        - Formularios de Contacto
+        - SEO Optimizado`,
         tech: ["Wix Studio", "CMS", "Diseño Responsivo"],
         features: [
           "Productos dinámicos vía CMS",
@@ -502,9 +532,13 @@ export const translations = {
       stakehouse:{
         title: "StakeHouse",
         description: "Página moderna e impactante para una parrilla, destacando el ambiente, el menú y la propuesta gastronómica.",
-        longDescription: `Proyecto desarrollado con enfoque en la presentación visual y la experiencia del usuario.
-        Utiliza Bootstrap 5 para garantizar la capacidad de respuesta y la coherencia visual en diferentes dispositivos.
-        Diseño moderno que refleja el ambiente sofisticado del establecimiento.`,
+        longDescription: `
+        - Diseño Responsivo y Moderno
+        - Navegación Intuitiva
+        - Formulario de Contacto
+        - Galería de Imágenes
+        - Tipografía y Colores Bien Definidos
+        `,
         tech: ["HTML", "CSS", "JavaScript", "Bootstrap 5"],
         features: [
           "Diseño responsivo",

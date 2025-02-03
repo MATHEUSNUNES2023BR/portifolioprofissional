@@ -176,7 +176,7 @@ const Projects = () => {
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 mb-4 line-clamp-3">
+                <p className="text-gray-600 mb-4 line-clamp-6">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -213,7 +213,7 @@ const Projects = () => {
         </div>
 
         <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-          <DialogContent className="max-w-4xl">
+          <DialogContent className="max-w-4xl h-[800px] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-400 scrollbar-track-gray-100">
             {selectedProject && (
               <div className="p-4">
                 <h2 className="text-2xl font-bold mb-4">{selectedProject.title}</h2>
@@ -240,7 +240,10 @@ const Projects = () => {
                   </button>
                 </div>
                 <div className="mt-4">
-                  <p className="text-gray-700 whitespace-pre-line">
+                  <h3 className='text-gray-700'>
+                    {t.projects.card.caracteristicasprincipais}
+                  </h3>
+                  <p className="text-gray-700 whitespace-pre-line -mt-5">
                     {selectedProject.longDescription}
                   </p>
                   <div className="mt-4">

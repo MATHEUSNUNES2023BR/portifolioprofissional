@@ -70,3 +70,18 @@
     @apply bg-background text-foreground;
   }
 }
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de scroll */
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #9CA3AF; /* Cor do thumb (scrollbar-thumb-gray-400) */
+    border-radius: 10px; /* Arredondamento (scrollbar-thumb-rounded) */
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background-color: transparent; /* Cor do track (scrollbar-track-gray-100) */
+    border: none;
+  }
+}
