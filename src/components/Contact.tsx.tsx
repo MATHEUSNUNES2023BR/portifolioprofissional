@@ -135,6 +135,7 @@ const Contact = () => {
                           <p className="text-sm font-medium text-gray-600">{info.label}</p>
                           {info.link ? (
                             <a 
+                              target='_blank'
                               href={info.link}
                               className="text-lg font-semibold hover:text-blue-600 transition-colors"
                             >
