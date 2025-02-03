@@ -47,6 +47,7 @@ import stake_home from '../assets/projetos/stakehouse/stake_home.png'
 import stake_eventos from '../assets/projetos/stakehouse/stake_eventos.png'
 import stake_cardapio from '../assets/projetos/stakehouse/stake_cardapio.png'
 import stake_contato from '../assets/projetos/stakehouse/stake_contato.png'
+
 interface typeProjects{
   title: string;
   description: string;

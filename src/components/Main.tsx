@@ -13,6 +13,8 @@ import wix from '../assets/habilidades/icons8-wix.com-ltd.-is-an-israeli-cloud-b
 import ApiClima from './ApiClima'
 import { LanguageContext } from '../App'
 import { useContext } from 'react'
+import { motion } from 'framer-motion';
+
 type Habilidades = {
   image: string;
   alt: string;
@@ -33,19 +35,163 @@ function Main(){
   ]
 
   const { t } = useContext(LanguageContext)
+
+  const profileVariants = {
+    initial: { scale: 0.8, opacity: 0 },
+    animate: { 
+      scale: 1, 
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const glowVariants = {
+    initial: { opacity: 0 },
+    animate: { 
+      opacity: [0.5, 1, 0.5],
+      transition: {
+        duration: 2,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  const rotateVariants = {
+    animate: {
+      rotate: 360,
+      transition: {
+        duration: 20,
+        repeat: Infinity,
+        ease: "linear"
+      }
+    }
+  };
+
+  const orbitVariants = {
+    animate: {
+      rotate: 360,
+      transition: {
+        duration: 15,
+        repeat: Infinity,
+        ease: "linear"
+      }
+    }
+  };
+
+  const particleVariants = {
+    animate: {
+      scale: [1, 1.2, 1],
+      opacity: [0.7, 1, 0.7],
+      transition: {
+        duration: 2,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   return(
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <section className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-start mb-20">
-          {/* Foto e Clima */}
+          {/* Enhanced Profile Photo Section */}
           <div className="flex flex-col items-center gap-8">
-            <div className="relative">
-              <img 
-                className="w-64 h-64 lg:w-80 lg:h-80 rounded-full object-cover border-4 border-white shadow-2xl" 
-                src={minhafoto} 
-                alt="Foto de perfil" 
+            <div className="relative w-80 h-80 flex items-center justify-center">
+              {/* Rotating Orbit */}
+              <motion.div
+                variants={orbitVariants}
+                animate="animate"
+                className="absolute inset-0"
+              >
+                {/* Orbital Particles */}
+                <motion.div
+                  variants={particleVariants}
+                  animate="animate"
+                  className="absolute -top-2 left-1/2 w-4 h-4 bg-blue-500 rounded-full blur-[2px]"
+                />
+                <motion.div
+                  variants={particleVariants}
+                  animate="animate"
+                  className="absolute top-1/2 -right-2 w-4 h-4 bg-purple-500 rounded-full blur-[2px]"
+                />
+                <motion.div
+                  variants={particleVariants}
+                  animate="animate"
+                  className="absolute -bottom-2 left-1/2 w-4 h-4 bg-white rounded-full blur-[2px]"
+                />
+                <motion.div
+                  variants={particleVariants}
+                  animate="animate"
+                  className="absolute top-1/2 -left-2 w-4 h-4 bg-blue-400 rounded-full blur-[2px]"
+                />
+              </motion.div>
+
+              {/* Gradient Border */}
+              <div className="absolute inset-[15px] rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 animate-spin-slow p-1">
+                {/* White Background Ring */}
+                <div className="absolute inset-[2px] bg-white rounded-full"></div>
+              </div>
+
+              {/* Profile Photo */}
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ 
+                  scale: 1, 
+                  opacity: 1,
+                  transition: { duration: 0.8, ease: "easeOut" }
+                }}
+                whileHover={{ scale: 1.05 }}
+                className="relative z-10 w-64 h-64 rounded-full overflow-hidden border-4 border-white shadow-2xl"
+              >
+                <img 
+                  className="w-full h-full object-cover"
+                  src={minhafoto} 
+                  alt="Foto de perfil" 
+                />
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30"
+                />
+              </motion.div>
+
+              {/* Floating Decorative Elements */}
+              <motion.div
+                animate={{
+                  y: [-10, 10, -10],
+                  x: [-10, 10, -10],
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 180, 360],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="absolute top-0 right-0 w-6 h-6 bg-blue-500 rounded-full opacity-75 blur-[1px]"
+              />
+              <motion.div
+                animate={{
+                  y: [10, -10, 10],
+                  x: [10, -10, 10],
+                  scale: [1, 1.2, 1],
+                  rotate: [360, 180, 0],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5
+                }}
+                className="absolute bottom-0 left-0 w-6 h-6 bg-purple-500 rounded-full opacity-75 blur-[1px]"
               />
             </div>
+
+            {/* Weather Widget */}
             <div className="w-full max-w-sm">
               <ApiClima />
             </div>
