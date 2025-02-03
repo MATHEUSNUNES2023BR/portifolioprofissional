@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react'
 import LanguageSelector from './LanguageSelector'
 import { Language, LanguageContext } from '../App'
-
+import { Link } from 'react-router-dom'
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const { language, setLanguage, t } = useContext(LanguageContext)
@@ -20,9 +20,9 @@ function Header() {
 
           {/* Links de Navegação Desktop */}
           <div className="hidden sm:flex items-center space-x-12">
-            <NavLink href="#sobre">{t.header.about}</NavLink>
-            <NavLink href="#projetos">{t.header.projects}</NavLink>
-            <NavLink href="#contato">{t.header.contact}</NavLink>
+            <Link to="/">{t.header.about}</Link>
+            <Link to="/projects">{t.header.projects}</Link>
+            <Link to="/contato">{t.header.contact}</Link>
             <LanguageSelector 
               currentLanguage={language}
               onLanguageChange={(lang: Language) => setLanguage(lang)}
@@ -60,7 +60,6 @@ function Header() {
           `}>
             <div className="px-6 space-y-4">
               <MobileNavLink href="#sobre">Sobre</MobileNavLink>
-              <MobileNavLink href="#habilidades">Habilidades</MobileNavLink>
               <MobileNavLink href="#projetos">Projetos</MobileNavLink>
               <MobileNavLink href="#contato">Contato</MobileNavLink>
             </div>

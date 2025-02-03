@@ -116,6 +116,66 @@ export const translations = {
       search: "Pesquise uma cidade para ver as informações do clima",
       loading: "Carregando...",
       error: "Cidade não encontrada. Tente novamente."
+    },
+    projects:{
+      card: {
+        h2:'Principais Funcionalidades:',
+        projetos: 'Projetos',
+        verprojeto: 'Ver Projeto',
+        galeria: 'Galeria',
+      },
+      dbo:{
+        title: "Dragon Ball Online - Knightz",
+        description: `Este site foi desenvolvido com o objetivo de oferecer aos jogadores do MMORPG Dragon Ball Online uma plataforma completa e interativa para gerenciar suas contas, explorar informações do jogo e acessar recursos exclusivos.`,
+        longDescription: `Funcionalidades Principais:
+        - Página Inicial com vídeo interativo das classes
+        - Tabelas de Ranking de jogadores e doadores
+        - Sistema completo de Cadastro e Login
+        - Painel do Usuário com gerenciamento de personagens
+        - Sistema de pagamento via PIX
+        - Sistema de pagamento via CARTÃO DÉBITO E CRÉDITO
+        - Skill Calculator para simulação de builds
+        - Página de Rankings e torneios Budokai`,
+        tech: ["React", "TypeScript", "Styled Components", "Django", "Python"],
+        features: [
+          "Gestão de contas",
+          "Sistema de ranking",
+          "Painel administrativo",
+          "Integração PIX",
+          "Integração Cartão de Débito e Crédito",
+          "Personalização de personagens",
+        ],
+      },
+      sollie:{
+        title: "Sollie Professional - Wix",
+        description: "Site profissional desenvolvido com Wix Studio, oferecendo uma experiência sofisticada e responsiva para diferentes dispositivos.",
+        longDescription: `Desenvolvido com Wix Studio, este projeto combina design sofisticado e flexibilidade.
+        Utiliza CMS do Wix Studio para gerenciamento de produtos dinâmicos e oferece
+        uma experiência otimizada em mobile, tablet e desktop.`,
+        tech: ["Wix Studio", "CMS", "Design Responsivo"],
+        features: [
+          "Produtos dinâmicos via CMS",
+          "Design responsivo",
+          "Interface moderna",
+          "Gestão de conteúdo",
+          "Compatibilidade multi-dispositivo",
+        ],
+      },
+      stakehouse:{
+        title: "StakeHouse",
+        description: "Página moderna e visualmente impactante para uma churrascaria, destacando ambiente, cardápio e proposta gastronômica.",
+        longDescription: `Projeto desenvolvido com foco em apresentação visual e experiência do usuário.
+        Utiliza Bootstrap 5 para garantir responsividade e consistência visual em diferentes dispositivos.
+        Design moderno que reflete o ambiente sofisticado do estabelecimento.`,
+        tech: ["HTML", "CSS", "JavaScript", "Bootstrap 5"],
+        features: [
+          "Design responsivo",
+          "Navegação intuitiva",
+          "Cardápio digital",
+          "Interface moderna",
+          "Otimização mobile",
+        ],
+      }
     }
   },
   en: {
@@ -225,6 +285,66 @@ export const translations = {
       search: "Search for a city to see weather information",
       loading: "Loading...",
       error: "City not found. Please try again."
+    },
+    projects:{
+      card: {
+        h2:'Main Features:',
+        projetos: 'Projects',
+        galeria: 'Gallery',
+        verprojeto: 'View Project',
+      },
+      dbo:{
+        title: "Dragon Ball Online - Knightz",
+        description: `This website was developed to provide MMORPG Dragon Ball Online players with a complete and interactive platform to manage their accounts, explore game information, and access exclusive resources.`,
+        longDescription: `Main Features:
+        - Homepage with interactive class video
+        - Player and donor ranking tables
+        - Complete Registration and Login system
+        - User Panel with character management
+        - Payment system via PIX
+        - Payment system via Debit and Credit Card
+        - Skill Calculator for build simulation
+        - Rankings and Budokai tournament page`,
+        tech: ["React", "TypeScript", "Styled Components", "Django", "Python"],
+        features: [
+          "Account management",
+          "Ranking system",
+          "Admin panel",
+          "PIX integration",
+          "Debit and Credit Card integration",
+          "Character customization",
+        ],
+      },
+      sollie:{
+        title: "Sollie Professional - Wix",
+        description: "Professional website developed with Wix Studio, offering a sophisticated and responsive experience across different devices.",
+        longDescription: `Developed with Wix Studio, this project combines sophisticated design and flexibility.
+        It uses Wix Studio CMS for dynamic product management and provides
+        an optimized experience on mobile, tablet, and desktop.`,
+        tech: ["Wix Studio", "CMS", "Responsive Design"],
+        features: [
+          "Dynamic products via CMS",
+          "Responsive design",
+          "Modern interface",
+          "Content management",
+          "Multi-device compatibility",
+        ],
+      },
+      stakehouse:{
+        title: "StakeHouse",
+        description: "A modern and visually striking page for a steakhouse, highlighting ambiance, menu, and gastronomic concept.",
+        longDescription: `Project developed with a focus on visual presentation and user experience.
+        Uses Bootstrap 5 to ensure responsiveness and visual consistency across different devices.
+        Modern design that reflects the sophisticated atmosphere of the establishment.`,
+        tech: ["HTML", "CSS", "JavaScript", "Bootstrap 5"],
+        features: [
+          "Responsive design",
+          "Intuitive navigation",
+          "Digital menu",
+          "Modern interface",
+          "Mobile optimization",
+        ],
+      }
     }
   },
   es: {
@@ -334,6 +454,66 @@ export const translations = {
       search: "Busque una ciudad para ver la información del clima",
       loading: "Cargando...",
       error: "Ciudad no encontrada. Inténtelo de nuevo."
+    },
+    projects:{
+      card: {
+        h2:'Características Principales:',
+        projetos: 'Proyectos',
+        galeria: 'Galería',
+        verprojeto: 'Ver Proyecto',
+      },
+      dbo:{
+        title: "Dragon Ball Online - Knightz",
+        description: `Este sitio web fue desarrollado para brindar a los jugadores del MMORPG Dragon Ball Online una plataforma completa e interactiva para administrar sus cuentas, explorar información del juego y acceder a recursos exclusivos.`,
+        longDescription: `Características principales:
+        - Página de inicio con video interactivo de clases
+        - Tablas de clasificación de jugadores y donadores
+        - Sistema completo de Registro e Inicio de sesión
+        - Panel de usuario con gestión de personajes
+        - Sistema de pago mediante PIX
+        - Sistema de pago mediante Tarjeta de Débito y Crédito
+        - Calculadora de habilidades para simulación de builds
+        - Página de clasificaciones y torneos Budokai`,
+        tech: ["React", "TypeScript", "Styled Components", "Django", "Python"],
+        features: [
+          "Gestión de cuentas",
+          "Sistema de clasificación",
+          "Panel administrativo",
+          "Integración con PIX",
+          "Integración con Tarjeta de Débito y Crédito",
+          "Personalización de personajes",
+        ],
+      },
+      sollie:{
+        title: "Sollie Professional - Wix",
+        description: "Sitio web profesional desarrollado con Wix Studio, ofreciendo una experiencia sofisticada y responsiva en diferentes dispositivos.",
+        longDescription: `Desarrollado con Wix Studio, este proyecto combina un diseño sofisticado y flexibilidad.
+        Utiliza el CMS de Wix Studio para la gestión de productos dinámicos y ofrece
+        una experiencia optimizada en móvil, tableta y escritorio.`,
+        tech: ["Wix Studio", "CMS", "Diseño Responsivo"],
+        features: [
+          "Productos dinámicos vía CMS",
+          "Diseño responsivo",
+          "Interfaz moderna",
+          "Gestión de contenido",
+          "Compatibilidad con múltiples dispositivos",
+        ],
+      },
+      stakehouse:{
+        title: "StakeHouse",
+        description: "Página moderna e impactante para una parrilla, destacando el ambiente, el menú y la propuesta gastronómica.",
+        longDescription: `Proyecto desarrollado con enfoque en la presentación visual y la experiencia del usuario.
+        Utiliza Bootstrap 5 para garantizar la capacidad de respuesta y la coherencia visual en diferentes dispositivos.
+        Diseño moderno que refleja el ambiente sofisticado del establecimiento.`,
+        tech: ["HTML", "CSS", "JavaScript", "Bootstrap 5"],
+        features: [
+          "Diseño responsivo",
+          "Navegación intuitiva",
+          "Menú digital",
+          "Interfaz moderna",
+          "Optimización móvil",
+        ],
+      }
     }
   }
 } 

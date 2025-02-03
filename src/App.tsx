@@ -3,6 +3,8 @@ import './index.css'
 import HomePage from './pages/Home'
 import { translations } from './i18n/translations'
 import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ProjectPage from './pages/ProjetctPage'
 
 export type Language = 'pt' | 'en' | 'es'
 
@@ -23,7 +25,12 @@ function App() {
   }
   return (
     <LanguageContext.Provider value={value as any}>
-      <HomePage />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/projects" element={<ProjectPage />} />
+        </Routes>
+      </BrowserRouter>
     </LanguageContext.Provider>
   )
 }
