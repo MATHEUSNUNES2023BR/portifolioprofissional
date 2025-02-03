@@ -113,8 +113,8 @@ function ApiClima(){
         <div className='relative flex items-center gap-2 bg-white rounded-lg shadow-sm p-2'>
         <input 
           onChange={(e) => setCityState(removerAcentos(e.target.value))} 
-          onKeyPress={handleKeyPress}
-          className='flex-1 px-3 py-2 outline-none text-gray-700 placeholder-gray-400 text-sm focus:placeholder-gray-300 transition-colors'
+          onKeyDown={handleKeyPress}
+          className='w-full flex-1 px-3 py-2 outline-none text-gray-700 placeholder-gray-400 text-sm focus:placeholder-gray-300 transition-colors'
           placeholder={t.weather.placeholder}
           type="text"
         />
