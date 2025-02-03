@@ -31,33 +31,8 @@ function Main(){
     {image: postgres, alt: 'PostgreSQL'},
     {image: wix, alt: 'Wix'},
   ]
-  const softSkills = [
-    {
-      "softSkill": "Trabalho em equipe",
-      "description": "Experiência com suporte técnico e colaboração em ambientes de TI, como em sua atuação no Aparecida Shopping."
-    },
-    {
-      "softSkill": "Resolução de problemas",
-      "description": "Identificação e solução de problemas em TI, incluindo manutenção de computadores e redes."
-    },
-    {
-      "softSkill": "Comunicação",
-      "description": "Prestação de suporte e interação com colaboradores para resolver questões técnicas."
-    },
-    {
-      "softSkill": "Adaptabilidade",
-      "description": "Experiência na área de TI, incluindo front-end, back-end e suporte técnico."
-    },
-    {
-      "softSkill": "Aprendizado contínuo",
-      "description": "Busca constante por aperfeiçoamento, como sua formação em desenvolvimento Full Stack Python e experiência com diversas tecnologias modernas."
-    },
-    {
-      "softSkill": "Pensamento Crítico",
-      "description": "Capacidade de analisar situações de forma lógica e tomar decisões informadas."
-    }
-  ]
-  const { language, setLanguage, t } = useContext(LanguageContext)
+
+  const { t } = useContext(LanguageContext)
   return(
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <section className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
