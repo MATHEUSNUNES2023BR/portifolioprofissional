@@ -36,41 +36,6 @@ function Main(){
 
   const { t } = useContext(LanguageContext)
 
-  const profileVariants = {
-    initial: { scale: 0.8, opacity: 0 },
-    animate: { 
-      scale: 1, 
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const glowVariants = {
-    initial: { opacity: 0 },
-    animate: { 
-      opacity: [0.5, 1, 0.5],
-      transition: {
-        duration: 2,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
-
-  const rotateVariants = {
-    animate: {
-      rotate: 360,
-      transition: {
-        duration: 20,
-        repeat: Infinity,
-        ease: "linear"
-      }
-    }
-  };
-
   const orbitVariants = {
     animate: {
       rotate: 360,
