@@ -154,112 +154,184 @@ const Projects = () => {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <section className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">
-          {t.projects.card.projetos}
-          <div className="h-1 w-20 bg-blue-500 mt-2"></div>
-        </h2>
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 via-gray-100 to-white">
+      <section className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        <div className="space-y-2 text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-800 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+            {t.projects.card.projetos}
+          </h2>
+          <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+        </div>
 
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {projects.map((project, index) => (
-        <div 
-          key={index}
-          className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300"
-        >
-          <img 
-            src={project.imageUrl.capa} 
-            alt={project.title}
-            className="w-full h-56 object-cover"
-          />
-          <div className="p-6">
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">
-          {project.title}
-            </h3>
-            <p className="text-gray-600 mb-4 line-clamp-6">
-          {project.description}
-            </p>
-            <div className="flex flex-wrap gap-2 mb-4">
-          {project.tech.map((tech, techIndex) => (
-            <span 
-              key={techIndex}
-              className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm"
+            <div 
+              key={index}
+              className="group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
             >
-              {tech}
-            </span>
-          ))}
+              <div className="relative overflow-hidden">
+                <img 
+                  src={project.imageUrl.capa} 
+                  alt={project.title}
+                  className="w-full h-56 object-cover transform transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-gray-600 mb-4 line-clamp-4 text-sm">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tech.map((tech, techIndex) => (
+                    <span 
+                      key={techIndex}
+                      className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium hover:bg-blue-100 transition-colors"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a 
+                    href={project.link}
+                    target='_blank'
+                    className="text-center inline-block px-6 py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+                  >
+                    {t.projects.card.verprojeto}
+                  </a>
+                  <button
+                    onClick={() => {
+                      setSelectedProject(project);
+                      setCurrentImageIndex(0);
+                    }}
+                    className="text-center inline-block px-6 py-2.5 border-2 border-blue-500 text-blue-500 rounded-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105"
+                  >
+                    {t.projects.card.galeria}
+                  </button>
+                </div>
+              </div>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3">
-          <a 
-            href={project.link}
-            target='_blank'
-            className="text-center inline-block px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-300"
-          >
-            {t.projects.card.verprojeto}
-          </a>
-          <button
-            onClick={() => {
-              setSelectedProject(project);
-              setCurrentImageIndex(0);
-            }}
-            className="text-center  inline-block px-6 py-2 border border-blue-500 text-blue-500 rounded-lg hover:bg-blue-50 transition-colors duration-300"
-          >
-            {t.projects.card.galeria}
-          </button>
-            </div>
-          </div>
-        </div>
           ))}
         </div>
 
         <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-          <DialogContent className="max-w-4xl h-[80svh] sm:h-[800px] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-400 scrollbar-track-gray-100">
-        {selectedProject && (
-          <div className="p-4">
-            <h2 className="text-2xl font-bold mb-4">{selectedProject.title}</h2>
-            <div className="relative">
-          {Object.keys(selectedProject.images).map((key, index) => (
-          <img
-            key={index}
-            src={selectedProject.images[key]}
-            alt={`${selectedProject.title} - Imagem ${index + 1}`}
-            className={`w-full rounded-lg ${index === currentImageIndex ? 'block' : 'hidden'}`}
-          />
-          ))}
-          <button
-          onClick={handlePrevImage}
-          className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-white/80 rounded-full hover:bg-white"
-          >
-          <ChevronLeft className="w-6 h-6" />
-          </button>
-          <button
-          onClick={handleNextImage}
-          className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-white/80 rounded-full hover:bg-white"
-          >
-          <ChevronRight className="w-6 h-6" />
-          </button>
-            </div>
-            <div className="mt-4">
-          <h3 className='text-gray-700 font-semibold'>
-            {t.projects.card.detalhes}
-          </h3>
-          <p className="text-gray-700 whitespace-pre-line -mt-5">
-            {selectedProject.longDescription}
-          </p>
-          <div className="mt-4">
-            <h3 className="font-semibold mb-2">{t.projects.card.h2}:</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              {selectedProject.features.map((feature, index) => (
-            <div key={index} className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-blue-500 rounded-full" />
-              <span>{feature}</span>
-            </div>
-              ))}
-            </div>
-          </div>
-            </div>
-          </div>
-        )}
+          <DialogContent className="max-w-5xl w-[95vw] h-[90vh] md:h-[90vh] p-0 overflow-hidden border-0 shadow-2xl">
+            {selectedProject && (
+              <div className="relative h-full flex flex-col bg-white overflow-hidden">
+                {/* Close Button */}
+                <button
+                  onClick={() => setSelectedProject(null)}
+                  className="absolute right-2 top-2 z-50 p-2 bg-black/50 hover:bg-black/70 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110"
+                >
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2.5"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+                </button>
+
+                {/* Header */}
+                <div className="flex-none p-4 sm:p-6 bg-gradient-to-r from-blue-600 to-purple-600">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                    {selectedProject.title}
+                  </h2>
+                </div>
+
+                {/* Image Viewer */}
+                <div className="relative flex-1 min-h-[40vh] bg-gray-900">
+                  {Object.keys(selectedProject.images).map((key, index) => (
+                    <div
+                      key={index}
+                      className={`absolute inset-0 transition-opacity duration-500 ${
+                        index === currentImageIndex ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                      }`}
+                    >
+                      <img
+                        src={selectedProject.images[key]}
+                        alt={`${selectedProject.title} - Imagem ${index + 1}`}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  ))}
+                  
+                  {/* Navigation Controls */}
+                  <div className="absolute inset-x-0 bottom-0 top-0 flex items-center justify-between px-2 sm:px-4">
+                    <button
+                      onClick={handlePrevImage}
+                      className="p-3 sm:p-4 bg-black/50 hover:bg-black/70 rounded-full text-white transform hover:scale-110 transition-all duration-300 backdrop-blur-sm"
+                    >
+                      <ChevronLeft className="w-7 h-7 sm:w-8 sm:h-8" />
+                    </button>
+                    <button
+                      onClick={handleNextImage}
+                      className="p-3 sm:p-4 bg-black/50 hover:bg-black/70 rounded-full text-white transform hover:scale-110 transition-all duration-300 backdrop-blur-sm"
+                    >
+                      <ChevronRight className="w-7 h-7 sm:w-8 sm:h-8" />
+                    </button>
+                  </div>
+
+                  {/* Image Counter */}
+                  <div className="absolute top-4 left-4 px-3 py-1 bg-black/50 rounded-full backdrop-blur-sm text-white text-sm">
+                    {currentImageIndex + 1} / {Object.keys(selectedProject.images).length}
+                  </div>
+
+                  {/* Image Indicators */}
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 px-3 py-1.5 bg-black/50 rounded-full backdrop-blur-sm">
+                    {Object.keys(selectedProject.images).map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentImageIndex(index)}
+                        className={`transition-all duration-300 rounded-full ${
+                          index === currentImageIndex 
+                            ? 'w-6 h-2 bg-white' 
+                            : 'w-2 h-2 bg-white/60 hover:bg-white/80'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="flex-none h-[35vh] overflow-y-auto">
+                  <div className="space-y-6 p-4 sm:p-6">
+                    <div className="space-y-3">
+                      <h3 className="text-xl sm:text-2xl font-semibold text-gray-800">
+                        {t.projects.card.detalhes}
+                      </h3>
+                      <p className="text-gray-600 whitespace-pre-line text-sm sm:text-base leading-relaxed">
+                        {selectedProject.longDescription}
+                      </p>
+                    </div>
+
+                    <div className="space-y-3">
+                      <h3 className="text-xl sm:text-2xl font-semibold text-gray-800">
+                        {t.projects.card.h2}
+                      </h3>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {selectedProject.features.map((feature, index) => (
+                          <div 
+                            key={index} 
+                            className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg hover:bg-gray-100 transition-colors"
+                          >
+                            <div className="w-2 h-2 bg-blue-500 rounded-full" />
+                            <span className="text-gray-700 text-sm sm:text-base">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </DialogContent>
         </Dialog>
       </section>

@@ -64,7 +64,7 @@ function Main(){
                 </h3>
                 <ul className="grid grid-cols-3 sm:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 place-items-center">
                   {[html, css, js, ts, react, redux, bootstrap].map((tech, index) => (
-                    <li key={index} className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 transition-all hover:scale-110 hover:-translate-y-1">
+                    <li key={index} className="w-12 h-12 sm:w-11 sm:h-11 lg:w-12 lg:h-12 transition-all hover:scale-110 hover:-translate-y-1">
                       <img 
                         src={tech} 
                         alt={habilidadesImg[index].alt}
@@ -82,7 +82,7 @@ function Main(){
                 </h3>
                 <ul className="grid grid-cols-3 gap-3 sm:gap-4 lg:gap-6 place-items-center">
                   {[python, django, postgres].map((tech, index) => (
-                    <li key={index} className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 transition-all hover:scale-110 hover:-translate-y-1">
+                    <li key={index} className="w-12 h-12 sm:w-11 sm:h-11 lg:w-12 lg:h-12 transition-all hover:scale-110 hover:-translate-y-1">
                       <img 
                         src={tech} 
                         alt={habilidadesImg[index + 7].alt}
@@ -99,7 +99,7 @@ function Main(){
                   {t.skills.sections.tools}
                 </h3>
                 <ul className="grid grid-cols-3 gap-3 sm:gap-4 lg:gap-6 place-items-center">
-                  <li className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 transition-all hover:scale-110 hover:-translate-y-1">
+                  <li className="w-12 h-12 sm:w-11 sm:h-11 lg:w-12 lg:h-12 transition-all hover:scale-110 hover:-translate-y-1">
                     <img 
                       src={wix} 
                       alt="Wix"
