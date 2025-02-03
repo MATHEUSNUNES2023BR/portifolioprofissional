@@ -51,7 +51,7 @@ function Main(){
           </div>
           
           <div className="bg-white rounded-2xl shadow-xl p-8">
-            <h2 className="text-3xl font-bold text-gray-800 mb-6">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">
               {t.skills.title}
               <div className="h-1 w-20 bg-blue-500 mt-2"></div>
             </h2>
@@ -62,7 +62,7 @@ function Main(){
                 </h3>
                 <ul className="grid grid-cols-3 sm:grid-cols-4 gap-6 place-items-center">
                   {[html, css, js, ts, react, redux, bootstrap].map((tech, index) => (
-                    <li key={index} className="w-14 h-14 transition-all hover:scale-110 hover:-translate-y-1">
+                    <li key={index} className="w-12 h-12 sm:w-14 sm:h-14 transition-all hover:scale-110 hover:-translate-y-1">
                       <img 
                         src={tech} 
                         alt={habilidadesImg[index].alt}
@@ -80,7 +80,7 @@ function Main(){
                 </h3>
                 <ul className="grid grid-cols-3 gap-6 place-items-center">
                   {[python, django, postgres].map((tech, index) => (
-                    <li key={index} className="w-14 h-14 transition-all hover:scale-110 hover:-translate-y-1">
+                    <li key={index} className="w-12 h-12 sm:w-14 sm:h-14 transition-all hover:scale-110 hover:-translate-y-1">
                       <img 
                         src={tech} 
                         alt={habilidadesImg[index + 7].alt}
@@ -97,7 +97,7 @@ function Main(){
                   {t.skills.sections.tools}
                 </h3>
                 <ul className="grid grid-cols-3 gap-6 place-items-center">
-                  <li className="w-14 h-14 transition-all hover:scale-110 hover:-translate-y-1">
+                  <li className="w-12 h-12 sm:w-14 sm:h-14 transition-all hover:scale-110 hover:-translate-y-1">
                     <img 
                       src={wix} 
                       alt="Wix"
@@ -112,7 +112,7 @@ function Main(){
         </div>
 
         <section className="bg-white rounded-2xl shadow-xl p-8 mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
             {t.about.title}
             <div className="h-1 w-20 bg-blue-500 mt-2"></div>
           </h2>
@@ -122,7 +122,7 @@ function Main(){
         </section>
 
         <section className="bg-white rounded-2xl shadow-xl p-8 mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">
             {t.skills.softSkills.title}
             <div className="h-1 w-20 bg-blue-500 mt-2"></div>
           </h2>
@@ -147,7 +147,7 @@ function Main(){
         </section>
 
         <section className="bg-white rounded-2xl shadow-xl p-8">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">
             {t.skills.technicalSkills.title}
             <div className="h-1 w-20 bg-blue-500 mt-2"></div>
           </h2>

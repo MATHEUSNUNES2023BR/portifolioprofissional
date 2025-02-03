@@ -95,6 +95,9 @@ function ApiClima(){
       setIsLoading(false)
     }
   }
+  function removerAcentos(str: string) {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
 
   return(
     <div className='w-full max-w-md bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-6 font-["Poppins"] text-gray-800 hover:shadow-xl transition-all duration-300'>
@@ -109,7 +112,7 @@ function ApiClima(){
           <div className='absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur opacity-0 group-hover:opacity-30 transition duration-300'></div>
           <div className='relative flex items-center gap-2 bg-white rounded-lg shadow-sm p-2'>
             <input 
-              onChange={(e) => setCityState(e.target.value)} 
+              onChange={(e) => setCityState(removerAcentos(e.target.value))} 
               onKeyPress={handleKeyPress}
               className='flex-1 px-3 py-2 outline-none text-gray-700 placeholder-gray-400 text-sm focus:placeholder-gray-300 transition-colors'
               placeholder={t.weather.placeholder}
