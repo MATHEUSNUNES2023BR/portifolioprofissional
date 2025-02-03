@@ -11,13 +11,8 @@ function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
           {/* Logo/Nome */}
-          <a 
-            href="#" 
-            className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
-          >
-            Matheus Dev
-          </a>
-
+          <Link className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity" to="/">Matheus Dev
+          </Link> 
           {/* Links de Navegação Desktop */}
           <div className="hidden sm:flex items-center space-x-12">
             <Link to="/">{t.header.about}</Link>
