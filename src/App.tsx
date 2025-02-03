@@ -13,7 +13,7 @@ export type Language = 'pt' | 'en' | 'es'
 export const LanguageContext = React.createContext({
   language: 'pt' as Language,
   t: translations.pt,
-  setLanguage: (lang: Language) => {}
+  setLanguage: () => {}
 })
 
 function App() {
