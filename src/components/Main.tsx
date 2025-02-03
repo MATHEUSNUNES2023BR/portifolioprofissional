@@ -37,6 +37,7 @@ function Main(){
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <section className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-start mb-20">
+          {/* Foto e Clima */}
           <div className="flex flex-col items-center gap-8">
             <div className="relative">
               <img 
@@ -49,163 +50,166 @@ function Main(){
               <ApiClima />
             </div>
           </div>
-          
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">
+         
+          {/* Habilidades Ténicas */}
+            <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6">
               {t.skills.title}
-              <div className="h-1 w-20 bg-blue-500 mt-2"></div>
+              <div className="h-1 w-16 sm:w-20 bg-blue-500 mt-2"></div>
             </h2>
-            <div className="space-y-8">
-              <div className="bg-gradient-to-r from-blue-50 to-transparent p-6 rounded-xl">
-                <h3 className="text-xl font-semibold text-blue-600 mb-4">
-                  {t.skills.sections.frontend}
-                </h3>
-                <ul className="grid grid-cols-3 sm:grid-cols-4 gap-6 place-items-center">
-                  {[html, css, js, ts, react, redux, bootstrap].map((tech, index) => (
-                    <li key={index} className="w-12 h-12 sm:w-14 sm:h-14 transition-all hover:scale-110 hover:-translate-y-1">
-                      <img 
-                        src={tech} 
-                        alt={habilidadesImg[index].alt}
-                        className="w-full h-full object-contain" 
-                        title={habilidadesImg[index].alt}
-                      />
-                    </li>
-                  ))}
-                </ul>
+            <div className="space-y-6 sm:space-y-8">
+              <div className="bg-gradient-to-r from-blue-50 to-transparent p-4 sm:p-6 rounded-xl">
+              <h3 className="text-lg sm:text-xl font-semibold text-blue-600 mb-3 sm:mb-4">
+                {t.skills.sections.frontend}
+              </h3>
+              <ul className="grid grid-cols-3 sm:grid-cols-4 gap-4 sm:gap-6 place-items-center">
+                {[html, css, js, ts, react, redux, bootstrap].map((tech, index) => (
+                <li key={index} className="w-10 h-10 sm:w-12 sm:h-12 transition-all hover:scale-110 hover:-translate-y-1">
+                  <img 
+                  src={tech} 
+                  alt={habilidadesImg[index].alt}
+                  className="w-full h-full object-contain" 
+                  title={habilidadesImg[index].alt}
+                  />
+                </li>
+                ))}
+              </ul>
               </div>
 
-              <div className="bg-gradient-to-l from-purple-50 to-transparent p-6 rounded-xl">
-                <h3 className="text-xl font-semibold text-purple-600 mb-4">
-                  {t.skills.sections.backend}
-                </h3>
-                <ul className="grid grid-cols-3 gap-6 place-items-center">
-                  {[python, django, postgres].map((tech, index) => (
-                    <li key={index} className="w-12 h-12 sm:w-14 sm:h-14 transition-all hover:scale-110 hover:-translate-y-1">
-                      <img 
-                        src={tech} 
-                        alt={habilidadesImg[index + 7].alt}
-                        className="w-full h-full object-contain"
-                        title={habilidadesImg[index + 7].alt}
-                      />
-                    </li>
-                  ))}
-                </ul>
+              <div className="bg-gradient-to-l from-purple-50 to-transparent p-4 sm:p-6 rounded-xl">
+              <h3 className="text-lg sm:text-xl font-semibold text-purple-600 mb-3 sm:mb-4">
+                {t.skills.sections.backend}
+              </h3>
+              <ul className="grid grid-cols-3 gap-4 sm:gap-6 place-items-center">
+                {[python, django, postgres].map((tech, index) => (
+                <li key={index} className="w-10 h-10 sm:w-12 sm:h-12 transition-all hover:scale-110 hover:-translate-y-1">
+                  <img 
+                  src={tech} 
+                  alt={habilidadesImg[index + 7].alt}
+                  className="w-full h-full object-contain"
+                  title={habilidadesImg[index + 7].alt}
+                  />
+                </li>
+                ))}
+              </ul>
               </div>
 
-              <div className="bg-gradient-to-r from-green-50 to-transparent p-6 rounded-xl">
-                <h3 className="text-xl font-semibold text-green-600 mb-4">
-                  {t.skills.sections.tools}
-                </h3>
-                <ul className="grid grid-cols-3 gap-6 place-items-center">
-                  <li className="w-12 h-12 sm:w-14 sm:h-14 transition-all hover:scale-110 hover:-translate-y-1">
-                    <img 
-                      src={wix} 
-                      alt="Wix"
-                      className="w-full h-full object-contain"
-                      title="Wix"
-                    />
-                  </li>
-                </ul>
+              <div className="bg-gradient-to-r from-green-50 to-transparent p-4 sm:p-6 rounded-xl">
+              <h3 className="text-lg sm:text-xl font-semibold text-green-600 mb-3 sm:mb-4">
+                {t.skills.sections.tools}
+              </h3>
+              <ul className="grid grid-cols-3 gap-4 sm:gap-6 place-items-center">
+                <li className="w-10 h-10 sm:w-12 sm:h-12 transition-all hover:scale-110 hover:-translate-y-1">
+                <img 
+                  src={wix} 
+                  alt="Wix"
+                  className="w-full h-full object-contain"
+                  title="Wix"
+                />
+                </li>
+              </ul>
               </div>
             </div>
-          </div>
+            </div>
         </div>
-
-        <section className="bg-white rounded-2xl shadow-xl p-8 mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
+        {/* Sobre Mim */}
+        <section className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 mb-8 sm:mb-12">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4">
             {t.about.title}
-            <div className="h-1 w-20 bg-blue-500 mt-2"></div>
+            <div className="h-1 w-16 sm:w-20 bg-blue-500 mt-2"></div>
           </h2>
-          <p className="text-lg leading-relaxed text-gray-700">
+          <p className="text-base sm:text-lg leading-relaxed text-gray-700">
             {t.about.description}
           </p>
         </section>
-
-        <section className="bg-white rounded-2xl shadow-xl p-8 mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">
+             
+        {/* SoftSkills */}
+        <section className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 mb-8 sm:mb-12">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6">
             {t.skills.softSkills.title}
-            <div className="h-1 w-20 bg-blue-500 mt-2"></div>
+            <div className="h-1 w-16 sm:w-20 bg-blue-500 mt-2"></div>
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
             {Object.entries(t.skills.softSkills).map(([key, skill]) => {
               if (key === 'title') return null;
               return (
-                <div
-                  key={key}
-                  className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow"
-                >
-                  <h3 className="text-xl font-semibold text-blue-600 mb-3">
-                    {typeof skill === 'string' ? skill : skill.title}
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    {typeof skill === 'string' ? '' : skill.description}
-                  </p>
-                </div>
+          <div
+            key={key}
+            className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow"
+          >
+            <h3 className="text-lg sm:text-xl font-semibold text-blue-600 mb-2 sm:mb-3">
+              {typeof skill === 'string' ? skill : skill.title}
+            </h3>
+            <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+              {typeof skill === 'string' ? '' : skill.description}
+            </p>
+          </div>
               );
             })}
           </div>
         </section>
 
-        <section className="bg-white rounded-2xl shadow-xl p-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">
+        {/* Habilidades Tecnicas */}
+        <section className="bg-white rounded-2xl shadow-xl p-6 sm:p-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6">
             {t.skills.technicalSkills.title}
-            <div className="h-1 w-20 bg-blue-500 mt-2"></div>
+            <div className="h-1 w-16 sm:w-20 bg-blue-500 mt-2"></div>
           </h2>
           
-          <div className="space-y-8">
-            <div className="bg-gradient-to-r from-blue-50 via-blue-50 to-transparent p-6 rounded-xl">
-              <h3 className="text-2xl font-semibold text-blue-600 mb-4 flex items-center gap-3">
-                {t.skills.technicalSkills.frontend.title}
+          <div className="space-y-6 sm:space-y-8">
+            <div className="bg-gradient-to-r from-blue-50 via-blue-50 to-transparent p-4 sm:p-6 rounded-xl">
+              <h3 className="text-lg sm:text-2xl font-semibold text-blue-600 mb-3 sm:mb-4 flex items-center gap-3">
+          {t.skills.technicalSkills.frontend.title}
               </h3>
-              <ul className="space-y-4 text-gray-700">
-                {t.skills.technicalSkills.frontend.items.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="text-blue-500 text-xl">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
+              <ul className="space-y-3 sm:space-y-4 text-gray-700">
+          {t.skills.technicalSkills.frontend.items.map((item, index) => (
+            <li key={index} className="flex items-start gap-2 sm:gap-3">
+              <span className="text-blue-500 text-lg sm:text-xl">•</span>
+              <span className="text-sm sm:text-base">{item}</span>
+            </li>
+          ))}
               </ul>
             </div>
 
-            <div className="bg-gradient-to-l from-purple-50 via-purple-50 to-transparent p-6 rounded-xl ml-auto w-[90%]">
-              <h3 className="text-2xl font-semibold text-purple-600 mb-4 flex items-center gap-3">
-                {t.skills.technicalSkills.backend.title}
+            <div className="bg-gradient-to-l from-purple-50 via-purple-50 to-transparent p-4 sm:p-6 rounded-xl ml-auto w-full sm:w-[90%]">
+              <h3 className="text-lg sm:text-2xl font-semibold text-purple-600 mb-3 sm:mb-4 flex items-center gap-3">
+          {t.skills.technicalSkills.backend.title}
               </h3>
-              <ul className="space-y-4 text-gray-700">
-                {t.skills.technicalSkills.backend.items.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="text-purple-500 text-xl">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
+              <ul className="space-y-3 sm:space-y-4 text-gray-700">
+          {t.skills.technicalSkills.backend.items.map((item, index) => (
+            <li key={index} className="flex items-start gap-2 sm:gap-3">
+              <span className="text-purple-500 text-lg sm:text-xl">•</span>
+              <span className="text-sm sm:text-base">{item}</span>
+            </li>
+          ))}
               </ul>
             </div>
 
-            <div className="bg-gradient-to-r from-green-50 via-green-50 to-transparent p-6 rounded-xl">
-              <h3 className="text-2xl font-semibold text-green-600 mb-4 flex items-center gap-3">
-                {t.skills.technicalSkills.tools.title}
+            <div className="bg-gradient-to-r from-green-50 via-green-50 to-transparent p-4 sm:p-6 rounded-xl">
+              <h3 className="text-lg sm:text-2xl font-semibold text-green-600 mb-3 sm:mb-4 flex items-center gap-3">
+          {t.skills.technicalSkills.tools.title}
               </h3>
-              <ul className="space-y-4 text-gray-700">
-                {t.skills.technicalSkills.tools.items.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="text-green-500 text-xl">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
+              <ul className="space-y-3 sm:space-y-4 text-gray-700">
+          {t.skills.technicalSkills.tools.items.map((item, index) => (
+            <li key={index} className="flex items-start gap-2 sm:gap-3">
+              <span className="text-green-500 text-lg sm:text-xl">•</span>
+              <span className="text-sm sm:text-base">{item}</span>
+            </li>
+          ))}
               </ul>
             </div>
 
-            <div className="bg-gradient-to-l from-orange-50 via-orange-50 to-transparent p-6 rounded-xl ml-auto w-[90%]">
-              <h3 className="text-2xl font-semibold text-orange-600 mb-4 flex items-center gap-3">
-                {t.skills.technicalSkills.webdesign.title}
+            <div className="bg-gradient-to-l from-orange-50 via-orange-50 to-transparent p-4 sm:p-6 rounded-xl ml-auto w-full sm:w-[90%]">
+              <h3 className="text-lg sm:text-2xl font-semibold text-orange-600 mb-3 sm:mb-4 flex items-center gap-3">
+          {t.skills.technicalSkills.webdesign.title}
               </h3>
-              <ul className="space-y-4 text-gray-700">
-                {t.skills.technicalSkills.webdesign.items.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="text-orange-500 text-xl">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
+              <ul className="space-y-3 sm:space-y-4 text-gray-700">
+          {t.skills.technicalSkills.webdesign.items.map((item, index) => (
+            <li key={index} className="flex items-start gap-2 sm:gap-3">
+              <span className="text-orange-500 text-lg sm:text-xl">•</span>
+              <span className="text-sm sm:text-base">{item}</span>
+            </li>
+          ))}
               </ul>
             </div>
 
