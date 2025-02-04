@@ -1,6 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import './styles/tailwind.css';
+
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -62,13 +61,20 @@
     --chart-5: 340 75% 55%;
   }
 }
-@layer base {
-  * {
-    @apply border-border;
+@layer components {
+  .base-styles {
+    border-color: hsl(var(--border));
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
   }
-  body {
-    @apply bg-background text-foreground;
-  }
+}
+*[class*="border"] {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
 }
 @layer utilities {
   .scrollbar-thin::-webkit-scrollbar {
