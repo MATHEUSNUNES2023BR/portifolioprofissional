@@ -18,22 +18,20 @@ function Header() {
   const menuVariants = {
     closed: {
       x: "100%",
-      opacity: 0,
       transition: {
-        duration: 0.2, // Reduced from 0.3
+        duration: 0.15, // Reduced duration
         type: "tween",
-        ease: "easeOut",
-        staggerChildren: 0.05, // Reduced from 0.1
+        ease: [0.4, 0.0, 0.2, 1], // Optimized easing
+        staggerChildren: 0.02
       }
     },
     open: {
       x: 0,
-      opacity: 1,
       transition: {
-        duration: 0.2, // Reduced from 0.3
+        duration: 0.15,
         type: "tween",
-        ease: "easeOut",
-        staggerChildren: 0.05, // Reduced from 0.1
+        ease: [0.4, 0.0, 0.2, 1],
+        staggerChildren: 0.02,
         when: "beforeChildren"
       }
     }
@@ -41,14 +39,14 @@ function Header() {
 
   const itemVariants = {
     closed: {
-      x: 20, // Reduced from 50
+      x: 10,
       opacity: 0
     },
     open: {
       x: 0,
       opacity: 1,
       transition: {
-        duration: 0.2 // Added specific duration
+        duration: 0.1
       }
     }
   };
@@ -57,16 +55,17 @@ function Header() {
     hidden: { opacity: 0 },
     visible: { 
       opacity: 1,
-      transition: { duration: 0.15 } // Faster backdrop transition
+      transition: { duration: 0.1 }
     },
     exit: { 
       opacity: 0,
-      transition: { duration: 0.15 } 
+      transition: { duration: 0.1 }
     }
   };
 
   return (
     <>
+      {/* Optimized Backdrop */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -74,8 +73,13 @@ function Header() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="fixed inset-0 bg-black/30 backdrop-blur-[4px] z-40"
+            className="fixed inset-0 bg-black/30 backdrop-blur-[2px] z-40"
             onClick={() => setIsMobileMenuOpen(false)}
+            style={{ 
+              willChange: 'opacity',
+              transform: 'translateZ(0)',
+              backfaceVisibility: 'hidden'
+            }}
           />
         )}
       </AnimatePresence>
@@ -120,35 +124,31 @@ function Header() {
               </div>
             </div>
 
-            {/* Enhanced Mobile Menu Button with faster animations */}
+            {/* Optimized Mobile Menu Button */}
             <motion.button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="sm:hidden p-3 rounded-lg hover:bg-gray-100 transition-all duration-200"
+              className="sm:hidden p-3 rounded-lg hover:bg-gray-100 transition-all duration-150"
               whileTap={{ scale: 0.95, transition: { duration: 0.1 } }}
               aria-label="Menu de navegação"
+              style={{ touchAction: 'manipulation' }}
             >
               <div className="w-6 h-6 flex flex-col justify-center items-center space-y-1.5">
-                <motion.span 
-                  animate={isMobileMenuOpen ? 
-                    { rotate: 45, y: 6, transition: { duration: 0.2 } } : 
-                    { rotate: 0, y: 0, transition: { duration: 0.2 } }
-                  }
-                  className="w-6 h-0.5 bg-gray-600 block origin-center"
-                />
-                <motion.span 
-                  animate={isMobileMenuOpen ? 
-                    { opacity: 0, transition: { duration: 0.1 } } : 
-                    { opacity: 1, transition: { duration: 0.1 } }
-                  }
-                  className="w-6 h-0.5 bg-gray-600 block"
-                />
-                <motion.span 
-                  animate={isMobileMenuOpen ? 
-                    { rotate: -45, y: -6, transition: { duration: 0.2 } } : 
-                    { rotate: 0, y: 0, transition: { duration: 0.2 } }
-                  }
-                  className="w-6 h-0.5 bg-gray-600 block origin-center"
-                />
+                {[0, 1, 2].map((index) => (
+                  <motion.span 
+                    key={index}
+                    initial={false}
+                    animate={{
+                      rotate: isMobileMenuOpen && index === 0 ? 45 : 
+                             isMobileMenuOpen && index === 2 ? -45 : 0,
+                      y: isMobileMenuOpen && index === 0 ? 6 : 
+                         isMobileMenuOpen && index === 2 ? -6 : 0,
+                      opacity: isMobileMenuOpen && index === 1 ? 0 : 1
+                    }}
+                    transition={{ duration: 0.15 }}
+                    className="w-6 h-0.5 bg-gray-600 block origin-center"
+                    style={{ willChange: 'transform, opacity' }}
+                  />
+                ))}
               </div>
             </motion.button>
 
@@ -161,6 +161,11 @@ function Header() {
                   exit="closed"
                   variants={menuVariants}
                   className="sm:hidden fixed top-0 right-0 w-[50%] h-screen bg-white/95 backdrop-blur-sm shadow-2xl z-50"
+                  style={{ 
+                    willChange: 'transform',
+                    transform: 'translateZ(0)',
+                    backfaceVisibility: 'hidden'
+                  }}
                 >
                   <div className="px-4 py-6 space-y-4">
                     {/* Close Button */}
