@@ -72,6 +72,13 @@
   border-color: hsl(var(--border));
 }
 
+html, body {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+}
+
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));

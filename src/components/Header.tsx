@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import LanguageSelector from './LanguageSelector'
 import { Language, LanguageContext } from '../App'
 import { Link, useLocation } from 'react-router-dom'
@@ -8,6 +8,25 @@ function Header() {
   const { language, setLanguage, t } = useContext(LanguageContext)
   const location = useLocation()
 
+  // Controlar overflow do body
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+      document.body.style.position = 'relative'
+      document.body.style.width = '100%'
+    } else {
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
+    }
+
+    return () => {
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
+    }
+  }, [isMobileMenuOpen])
+
   const navLinks = [
     { path: '/', label: t.header.about },
     { path: '/projects', label: t.header.projects },
@@ -16,17 +35,26 @@ function Header() {
 
   return (
     <>
-      {/* Optimized Backdrop with native transition */}
+      {/* Backdrop otimizado */}
       <div 
         className={`
-          z-50
-          fixed inset-0 bg-black transition-opacity duration-200 ease-out
-          ${isMobileMenuOpen ? 'opacity-40 visible' : 'opacity-0 invisible'}
+          z-40
+          fixed inset-0 bg-black/40 transition-all duration-200 ease
+          ${isMobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'}
         `}
+        style={{ 
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          width: '100%',
+          overflowX: 'hidden'
+        }}
         onClick={() => setIsMobileMenuOpen(false)}
       />
 
-      <header className="bg-white/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-100 shadow-sm">
+      <header className="bg-white/80 backdrop-blur-sm sticky top-0 z-[60] border-b border-gray-100 shadow-sm">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-24">
             {/* Enhanced Logo */}
@@ -88,14 +116,19 @@ function Header() {
               </div>
             </button>
 
-            {/* Optimized Mobile Menu */}
+            {/* Menu Mobile Otimizado */}
             <div 
               className={`
                 sm:hidden fixed top-0 right-0 w-[50%] h-screen 
-                bg-white shadow-2xl z-50
+                bg-white shadow-2xl z-[70]
                 transform transition-transform duration-200 ease-out
                 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}
               `}
+              style={{ 
+                overflowY: 'auto',
+                overflowX: 'hidden',
+                WebkitOverflowScrolling: 'touch'
+              }}
             >
               <div className="px-4 py-6 space-y-4">
                 {/* Close Button */}
