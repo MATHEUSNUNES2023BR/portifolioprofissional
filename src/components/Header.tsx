@@ -19,8 +19,9 @@ function Header() {
       {/* Optimized Backdrop with native transition */}
       <div 
         className={`
+          z-50
           fixed inset-0 bg-black transition-opacity duration-200 ease-out
-          ${isMobileMenuOpen ? 'opacity-30 visible' : 'opacity-0 invisible'}
+          ${isMobileMenuOpen ? 'opacity-40 visible' : 'opacity-0 invisible'}
         `}
         onClick={() => setIsMobileMenuOpen(false)}
       />

@@ -86,7 +86,7 @@ function Main(){
                 <motion.div
                   variants={particleVariants}
                   animate="animate"
-                  className="absolute -bottom-2 left-1/2 w-4 h-4 bg-white rounded-full blur-[2px]"
+                  className="absolute -bottom-2 left-1/2 w-4 h-4 bg-purple-400 rounded-full blur-[2px]"
                 />
                 <motion.div
                   variants={particleVariants}
