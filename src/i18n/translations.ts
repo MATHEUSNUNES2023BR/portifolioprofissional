@@ -7,7 +7,7 @@ export const translations = {
     },
     about: {
       title: "Sobre Mim",
-      description: "Nascido em Florianópolis, Santa Catarina, cresci em Aparecida de Goiânia, Goiás. Tenho 24 anos e atualmente busco me especializar como Desenvolvedor Fullstack Python. Como cristão, minha fé no Senhor Yeshua Hamashiach guia minha trajetória, refletindo meus valores em cada projeto e desafio que assumo. Meu objetivo é crescer como profissional de tecnologia, desenvolvendo soluções inovadoras."
+      description: "Nascido em Florianópolis, Santa Catarina, cresci em Aparecida de Goiânia, Goiás. Tenho 25 anos e atualmente busco me especializar como Desenvolvedor Fullstack Python. Como cristão, minha fé no Senhor Yeshua Hamashiach guia minha trajetória, refletindo meus valores em cada projeto e desafio que assumo. Meu objetivo é crescer como profissional de tecnologia, desenvolvendo soluções inovadoras."
     },
     skills: {
       title: "Habilidades Técnicas",
@@ -259,7 +259,7 @@ export const translations = {
     },
     about: {
       title: "About Me",
-      description: "Born in Florianópolis, Santa Catarina, I grew up in Aparecida de Goiânia, Goiás. I'm 24 years old and currently seeking to specialize as a Python Fullstack Developer. As a Christian, my faith in Lord Yeshua Hamashiach guides my journey, reflecting my values in every project and challenge I take on. My goal is to grow as a technology professional, developing innovative solutions."
+      description: "Born in Florianópolis, Santa Catarina, I grew up in Aparecida de Goiânia, Goiás. I'm 25 years old and currently seeking to specialize as a Python Fullstack Developer. As a Christian, my faith in Lord Yeshua Hamashiach guides my journey, reflecting my values in every project and challenge I take on. My goal is to grow as a technology professional, developing innovative solutions."
     },
     skills: {
       title: "Technical Skills",
@@ -502,7 +502,7 @@ export const translations = {
     },
     about: {
       title: "Sobre Mí",
-      description: "Nacido en Florianópolis, Santa Catarina, crecí en Aparecida de Goiânia, Goiás. Tengo 24 años y actualmente busco especializarme como Desarrollador Fullstack Python. Como cristiano, mi fe en el Señor Yeshua Hamashiach guía mi trayectoria, reflejando mis valores en cada proyecto y desafío que asumo. Mi objetivo es crecer como profesional de la tecnología, desarrollando soluciones innovadoras."
+      description: "Nacido en Florianópolis, Santa Catarina, crecí en Aparecida de Goiânia, Goiás. Tengo 25 años y actualmente busco especializarme como Desarrollador Fullstack Python. Como cristiano, mi fe en el Señor Yeshua Hamashiach guía mi trayectoria, reflejando mis valores en cada proyecto y desafío que asumo. Mi objetivo es crecer como profesional de la tecnología, desarrollando soluciones innovadoras."
     },
     skills: {
       title: "Habilidades Técnicas",
